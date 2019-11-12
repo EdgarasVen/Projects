@@ -68,7 +68,8 @@ public class MyInteger {
     public static int parseInt(char[] a){
         int result=0;
         for(int i=0;i<a.length;i++){
-            result=result*10+(a[i]-48);
+            result=result*10+((int)a[i]-48);
+
         }
         return result;
     }
