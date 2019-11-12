@@ -21,11 +21,6 @@ public class MyInteger {
     public boolean isOdd(){
         return value%2!=0;
     }
-    //Просто́е число́ — натуральное (целое положительное) число, имеющее ровно два различных натуральных делителя — единицу и самого себя[1].
-    // Другими словами, число x является простым,
-    // если оно больше 1 и при этом делится без остатка только на 1 и на x.
-    // К примеру, 5 — простое число, а 6 является составным числом, так как,
-    // помимо 1 и 6, также делится на 2 и на 3.
     public boolean isPrime(){
         for (int i = 2; i < value; i++) {
             if (value % i == 0) {
@@ -64,5 +59,20 @@ public class MyInteger {
         }
         return true;
     }
-
+    public boolean equals(int value){
+        return this.value == value;
+    }
+    public boolean equals(MyInteger value){
+        return this.value == value.getValue();
+    }
+    public static int parseInt(char[] a){
+        int result=0;
+        for(int i=0;i<a.length;i++){
+            result=result*10+(Character.getNumericValue(a[i]));
+        }
+        return result;
+    }
+    public static int parseInt(String a) {
+        return parseInt(a.toCharArray());
+    }
 }

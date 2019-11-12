@@ -8,8 +8,11 @@ import org.mokykla.praktika.opp.Time;
 import org.mokykla.praktika.opp2.MyInteger;
 public class Solution {
     public static void main(String[] args) {
-
-        System.out.println(MyInteger.isPrime(3));
+        String number = "123";
+        char[] digits = { '1', '2', '3','4','5' };
+        System.out.println(MyInteger.parseInt(number));
+        System.out.println(Integer.parseInt(String.valueOf(digits)));
+        System.out.println(MyInteger.parseInt(digits));
     }
 
 
