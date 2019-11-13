@@ -1,3 +1,5 @@
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
 public class BoundedCounter {
     private int value;
     private int upperLimit;
@@ -6,6 +8,7 @@ public class BoundedCounter {
     }
     public void next() {
 // write code here
+        System.out.println();
     }
 
     @Override
