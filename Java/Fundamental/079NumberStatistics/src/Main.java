@@ -1,8 +1,25 @@
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
+        NumberStatistics stats = new NumberStatistics();
+
+        System.out.println("Type numbers: ");
+        while (true){
+        int number = Integer.parseInt(reader.nextLine());
+        if (number==-1)
+            break;
+        else
+            stats.addNumber(number);
+        }
+        System.out.println(stats.sum());
+        System.out.println(stats.even());
+        System.out.println(stats.odd());
+
+
+
         // Write test code here
         // Remember to remove all the extra code when doing assignments  79.3 and 79.4
 
