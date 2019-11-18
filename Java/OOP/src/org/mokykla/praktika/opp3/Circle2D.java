@@ -38,25 +38,16 @@ public class Circle2D {
         return Math.PI*radius*2;
     }
     public boolean contains(double x,double y) {
-        if(Math.sqrt((this.x-x)*(this.x-x) + (this.y-y)*(this.y-y))<=radius)
-            return true;
-        else
-            return false;
+        return Math.sqrt((this.x-x)*(this.x-x) + (this.y-y)*(this.y-y))<=radius;
     }
     public boolean contains(Circle2D circle) {
         double x2=circle.getX(),y2=circle.getY();
         double distance=Math.sqrt((x-x2)*(x-x2)+(y-y2)*(y-y2));
-        if(distance<=radius-circle.getRadius())
-            return true;
-        else
-            return false;
+            return distance<=radius-circle.getRadius();
     }
     public boolean overlaps(Circle2D circle) {
         double x2=circle.getX(),y2=circle.getY();
         double distance=Math.sqrt((x-x2)*(x-x2)+(y-y2)*(y-y2));
-        if(distance<=radius+circle.getRadius())
-            return true;
-        else
-            return false;
+            return distance<=radius+circle.getRadius();
     }
 }

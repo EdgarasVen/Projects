@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e71c6afd-356d-4d7c-977c-dd1c583b1b66" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/mokykla/praktika/opp3/Circle2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Fundamental/079NumberStatistics/bin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Fundamental/079NumberStatistics/bin/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Fundamental/079NumberStatistics/bin/NumberStatistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Fundamental/079NumberStatistics/bin/NumberStatistics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Fundamental/079NumberStatistics/bin/NumberStatistics1Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Fundamental/079NumberStatistics/bin/NumberStatistics1Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Fundamental/079NumberStatistics/bin/NumberStatistics2Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Fundamental/079NumberStatistics/bin/NumberStatistics2Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Fundamental/079NumberStatistics/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Fundamental/079NumberStatistics/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Fundamental/079NumberStatistics/src/NumberStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Fundamental/079NumberStatistics/src/NumberStatistics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/mokykla/praktika/opp3/MyString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/mokykla/praktika/opp4/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/mokykla/praktika/opp4/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/mokykla/praktika/opp4/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/mokykla/praktika/opp4/Square.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/mokykla/praktika/opp4/Triangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP/org/mokykla/praktika/main/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP/org/mokykla/praktika/main/Solution.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/main/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/mokykla/praktika/main/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp3/Circle2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/mokykla/praktika/opp3/Circle2D.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
