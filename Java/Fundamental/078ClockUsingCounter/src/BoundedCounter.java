@@ -3,19 +3,31 @@ import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 public class BoundedCounter {
     private int value;
     private int upperLimit;
+
     public BoundedCounter(int upperLimit) {
 // write code here
+        this.upperLimit = upperLimit;
     }
     public void next() {
 // write code here
-        System.out.println();
+        if (value>=upperLimit)
+            value=0;
+        else
+           value++;
+
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 
     @Override
     public String toString() {
-        return "BoundedCounter{" +
-                "value=" + value +
-                ", upperLimit=" + upperLimit +
-                '}';
+        String output = String.format("%02d",value);
+        return output ;
     }
 }
