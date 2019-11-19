@@ -38,10 +38,11 @@ public class Rectangle extends Shape {
     public String toString() {
         return "Rectangle with windth= " + windth + ", length=" + length + " which is a subclass of "+ super.toString();
     }
-
+    @Override
     public double getArea(){
         return windth*length;
     }
+
     public double getPerimetr(){
         return (2*windth)+(2*length);
     }

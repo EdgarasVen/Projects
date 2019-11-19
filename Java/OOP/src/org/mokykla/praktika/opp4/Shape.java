@@ -34,4 +34,10 @@ public class Shape {
     public String toString() {
         return "A Shape with color= " + color + " , filled=" + filled ;
     }
+
+
+
+    public double getArea(){
+        return 0;
+    }
 }
