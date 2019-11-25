@@ -1,6 +1,6 @@
 package org.mokykla.praktika.opp4;
 
-public class Shape {
+public abstract class Shape {
 
     private String color = "red";
     private boolean filled = true;
@@ -37,7 +37,5 @@ public class Shape {
 
 
 
-    public double getArea(){
-        return 0;
-    }
+    public abstract double getArea();
 }

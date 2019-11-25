@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/08 OOP (PraktikaEn) 84-89.iml" filepath="$PROJECT_DIR$/.idea/08 OOP (PraktikaEn) 84-89.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../Praktika/084OverloadedCounter.iml" filepath="$PROJECT_DIR$/../../../../Praktika/084OverloadedCounter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../Praktika/086LyyraCardAndRegister.iml" filepath="$PROJECT_DIR$/../../../../Praktika/086LyyraCardAndRegister.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../Praktika/087ApartmentComparison.iml" filepath="$PROJECT_DIR$/../../../../Praktika/087ApartmentComparison.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../Praktika/088Students.iml" filepath="$PROJECT_DIR$/../../../../Praktika/088Students.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../Praktika/089ClockObject.iml" filepath="$PROJECT_DIR$/../../../../Praktika/089ClockObject.iml" />
+    </modules>
+  </component>
+</project>

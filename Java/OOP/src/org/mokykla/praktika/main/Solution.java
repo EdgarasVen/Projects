@@ -12,7 +12,19 @@ import java.util.ArrayList;
 
 public class Solution {
     public static <shape> void main(String[] args) {
-        
+        ArrayList<Shape> list = new ArrayList<>();
+        list.add(new Circle());
+        list.add(new Rectangle());
+        list.add(new Square());
+        list.add(new Triangle());
+
+        for (Shape shape: list) {
+            System.out.println(shape.toString());
+        }
+        System.out.println();
+        for (Shape shape: list) {
+            System.out.println(shape.getArea());
+        }
     }
 
 }
