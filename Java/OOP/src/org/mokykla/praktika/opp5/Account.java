@@ -92,6 +92,6 @@ public abstract class Account {
                 ", dateCreated='" + dateCreated + '\'' +
                 ", overdraftLimit=" + overdraftLimit +
                 ", transitions=" + transitions +
-                '}';
+                '}' ;
     }
 }

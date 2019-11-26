@@ -14,6 +14,7 @@ public class Square extends Rectangle {
         super.setColor(color);
         super.setFilled(filled);
     }
+    @Override
     public double getSide(){
         return super.getLength();
     }

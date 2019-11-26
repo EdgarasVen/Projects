@@ -43,7 +43,15 @@ public class Rectangle extends Shape {
         return windth*length;
     }
 
-    public double getPerimetr(){
+
+
+    @Override
+    public double getSide() {
+        return length;
+    }
+
+    @Override
+    public double getPerimeter(){
         return (2*windth)+(2*length);
     }
 }

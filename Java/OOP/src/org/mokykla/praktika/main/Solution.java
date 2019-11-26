@@ -17,13 +17,20 @@ public class Solution {
         list.add(new Rectangle());
         list.add(new Square());
         list.add(new Triangle());
+        double suma = 0;
 
         for (Shape shape: list) {
             System.out.println(shape.toString());
         }
         System.out.println();
         for (Shape shape: list) {
-            System.out.println(shape.getArea());
+            suma+=shape.getArea();
+        }
+        System.out.println(suma);
+
+        System.out.println();
+        for (Shape shape: list) {
+            System.out.println(shape.getPerimeter());
         }
     }
 

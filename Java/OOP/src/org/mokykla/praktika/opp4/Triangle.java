@@ -51,6 +51,12 @@ public class Triangle extends Shape {
         return Math.sqrt(p * ((p - sideA) * (p - sideB) * (p - sideC)));
     }
 
+
+    @Override
+    public double getSide() {
+        return 0;
+    }
+
     public double getPerimeter(){
         return sideA+sideC+sideB;
     }
