@@ -43,9 +43,6 @@ public class Rectangle extends Shape {
         return windth*length;
     }
 
-
-
-    @Override
     public double getSide() {
         return length;
     }

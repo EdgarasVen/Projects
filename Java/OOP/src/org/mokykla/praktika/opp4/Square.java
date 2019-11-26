@@ -10,7 +10,7 @@ public class Square extends Rectangle {
     public Square(double side,String color,boolean filled){
         super(side,side,color,filled);
     }
-    @Override
+
     public double getSide(){
         return super.getLength();
     }

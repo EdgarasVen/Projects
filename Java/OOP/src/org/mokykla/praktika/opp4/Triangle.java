@@ -52,11 +52,6 @@ public class Triangle extends Shape {
     }
 
 
-    @Override
-    public double getSide() {
-        return 0;
-    }
-
     public double getPerimeter(){
         return sideA+sideC+sideB;
     }
