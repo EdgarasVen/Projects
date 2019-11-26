@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e71c6afd-356d-4d7c-977c-dd1c583b1b66" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP/org/mokykla/praktika/main/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP/org/mokykla/praktika/main/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP/org/mokykla/praktika/opp4/Square.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP/org/mokykla/praktika/opp4/Square.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/main/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/mokykla/praktika/main/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp4/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/mokykla/praktika/opp4/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp4/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/mokykla/praktika/opp4/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp5/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/mokykla/praktika/opp4/MainClass.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +56,7 @@
       <module name="OOP" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.mokykla.praktika.opp5.*" />
+          <option name="PATTERN" value="org.mokykla.praktika.opp4.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -70,11 +65,11 @@
       </method>
     </configuration>
     <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.mokykla.praktika.opp5.MainClass" />
+      <option name="MAIN_CLASS_NAME" value="org.mokykla.praktika.opp4.MainClass" />
       <module name="OOP" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.mokykla.praktika.opp5.*" />
+          <option name="PATTERN" value="org.mokykla.praktika.opp4.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

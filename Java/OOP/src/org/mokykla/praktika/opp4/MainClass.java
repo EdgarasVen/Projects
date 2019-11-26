@@ -1,4 +1,4 @@
-package org.mokykla.praktika.opp5;
+package org.mokykla.praktika.opp4;
 
 import org.mokykla.praktika.opp4.*;
 
