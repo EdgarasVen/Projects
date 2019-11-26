@@ -12,9 +12,9 @@ public class AccountOverdraft extends Account {
     }
 
     @Override
-    public void withdraw(int number) {
+    public void withdraw(int number,String description) {
         if (super.getBalance()+super.getOverdraftLimit()>=number)
-           setBalance(getBalance()-number);
+           super.withdraw(number,description);
     }
 
     @Override

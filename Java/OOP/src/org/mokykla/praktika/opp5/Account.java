@@ -2,25 +2,30 @@ package org.mokykla.praktika.opp5;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public abstract class Account {
     private String name;
     private int id=0;
     private double balance=0;
     private double annualInterestRate=0;
-    private String dateCreated =new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z").format(System.currentTimeMillis());
+    private Date date=null;
     private double overdraftLimit=0;
-    private ArrayList<String> transitions =new ArrayList<>();
+    private ArrayList<Transaction> transactionsList;
 
     public Account (String name,int id){
         this.name=name;
         this.id=id;
+        date=new Date();
+        transactionsList = new ArrayList<Transaction>();
     }
     public Account (String name,int id,double balance,double annualInterestRate){
         this.name=name;
         this.id=id;
         this.balance=balance;
         this.annualInterestRate=annualInterestRate;
+        date=new Date();
+        transactionsList = new ArrayList<Transaction>();
     }
     public String createDate(){
         return new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z").format(System.currentTimeMillis());
@@ -38,10 +43,6 @@ public abstract class Account {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public double getBalance() {
         return balance;
     }
@@ -54,12 +55,8 @@ public abstract class Account {
         return annualInterestRate;
     }
 
-    public void setAnnualInterestRate(double annualInterestRate) {
-        this.annualInterestRate = annualInterestRate;
-    }
-
     public String getDateCreated() {
-        return dateCreated;
+        return null;
     }
 
     public double getMonthlyInterestRate(){
@@ -70,18 +67,22 @@ public abstract class Account {
         return balance*getMonthlyInterestRate();
     }
 
-    public void withdraw(int number){
+    public void withdraw(int number,String descriptions){
         if (balance>=number)
             balance-=number;
-        transitions.add(createDate()+" Type W , amount: " +number+",balance:"+balance);
+        transactionsList.add(new Transaction('W',number,balance,descriptions));
     }
 
-    public void deposit(int number){
+    public void add(int number,String descriptions){
+        if(number>0)
             balance+=number;
-        transitions.add(createDate()+" Type D , amount: " +number+",balance:"+balance);
-
+        transactionsList.add(new Transaction('D',number,balance,descriptions));
     }
-
+    public void printAllTransactions(){
+        for (Transaction trans: transactionsList) {
+            System.out.println(trans);
+        }
+    }
     @Override
     public String toString() {
         return "Account{" +
@@ -89,9 +90,9 @@ public abstract class Account {
                 ", id=" + id +
                 ", balance=" + balance +
                 ", annualInterestRate=" + annualInterestRate +
-                ", dateCreated='" + dateCreated + '\'' +
+                ", dateCreated='"  +
                 ", overdraftLimit=" + overdraftLimit +
-                ", transitions=" + transitions +
+                ", transitions=" +
                 '}' ;
     }
 }
