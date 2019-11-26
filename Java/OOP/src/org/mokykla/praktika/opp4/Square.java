@@ -5,14 +5,10 @@ public class Square extends Rectangle {
 
     }
     public Square(double side){
-        super.setLength(side);
-        super.setWindth(side);
+        super(side,side);
     }
     public Square(double side,String color,boolean filled){
-        super.setLength(side);
-        super.setWindth(side);
-        super.setColor(color);
-        super.setFilled(filled);
+        super(side,side,color,filled);
     }
     @Override
     public double getSide(){
