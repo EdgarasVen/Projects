@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e71c6afd-356d-4d7c-977c-dd1c583b1b66" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp5/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/mokykla/praktika/opp5/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp5/AccountOverdraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/mokykla/praktika/opp5/AccountOverdraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp5/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/mokykla/praktika/opp5/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +28,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Fundamental" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Fundamental/08 OOP (PraktikaEn) p2.8" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -53,7 +50,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.MainClass">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.mokykla.praktika.opp5.Main" />
       <module name="OOP" />
@@ -95,8 +92,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.MainClass" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Solution" />
       </list>
     </recent_temporary>
