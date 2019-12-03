@@ -4,7 +4,7 @@ public class Flight extends Airport{
     private Airplane plane ;
 
     public Flight (Airplane plane,String departureCode, String destinationCode){
-        this.plane=plane;
+        this.plane=plane; // create object plane
         this.departureCode=departureCode;
         this.destinationCode=destinationCode;
     }
