@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/10 OOP (PraktikaEn) p2.10-11.iml" filepath="$PROJECT_DIR$/.idea/10 OOP (PraktikaEn) p2.10-11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../Praktika/p2.10NationalService.iml" filepath="$PROJECT_DIR$/../../../../Praktika/p2.10NationalService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../Praktika/p2.11BoxesAndThings.iml" filepath="$PROJECT_DIR$/../../../../Praktika/p2.11BoxesAndThings.iml" />
+    </modules>
+  </component>
+</project>
