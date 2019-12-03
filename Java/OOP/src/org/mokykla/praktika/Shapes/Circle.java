@@ -1,4 +1,4 @@
-package org.mokykla.praktika.opp4;
+package org.mokykla.praktika.Shapes;
 
 public class Circle extends Shape {
 

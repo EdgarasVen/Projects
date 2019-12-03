@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e71c6afd-356d-4d7c-977c-dd1c583b1b66" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp3/Circle2D.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp3/MyString.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp4/Circle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp4/MainClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp4/Rectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp4/Shape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp4/Square.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp4/Triangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp5/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp5/AccountOverdraft.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp5/AccountSaving.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp5/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/mokykla/praktika/opp5/Transaction.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

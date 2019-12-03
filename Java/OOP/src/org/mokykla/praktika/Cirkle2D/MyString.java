@@ -1,4 +1,4 @@
-package org.mokykla.praktika.opp3;
+package org.mokykla.praktika.Cirkle2D;
 
 import java.util.Locale;
 

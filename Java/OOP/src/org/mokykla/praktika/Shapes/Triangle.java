@@ -1,4 +1,4 @@
-package org.mokykla.praktika.opp4;
+package org.mokykla.praktika.Shapes;
 
 public class Triangle extends Shape {
     private double sideC=1.0;

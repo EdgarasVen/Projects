@@ -1,6 +1,5 @@
-package org.mokykla.praktika.opp4;
+package org.mokykla.praktika.Shapes;
 
-import org.mokykla.praktika.opp4.*;
 
 import java.util.ArrayList;
 

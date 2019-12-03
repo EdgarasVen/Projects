@@ -1,4 +1,4 @@
-package org.mokykla.praktika.opp5;
+package org.mokykla.praktika.bankAccount;
 
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 

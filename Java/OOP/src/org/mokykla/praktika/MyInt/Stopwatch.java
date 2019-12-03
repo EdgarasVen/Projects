@@ -1,4 +1,4 @@
-package org.mokykla.praktika.opp2;
+package org.mokykla.praktika.MyInt;
 
 public class Stopwatch {
     private long startTime ;

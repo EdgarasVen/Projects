@@ -1,4 +1,4 @@
-package org.mokykla.praktika.opp5;
+package org.mokykla.praktika.bankAccount;
 
 
 import java.util.Date;

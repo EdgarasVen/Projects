@@ -1,4 +1,4 @@
-package org.mokykla.praktika.opp5;
+package org.mokykla.praktika.bankAccount;
 
 public class AccountSaving extends Account {
 
