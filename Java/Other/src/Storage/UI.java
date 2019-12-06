@@ -1,4 +1,4 @@
-package Storage;
+package storage;
 import java.io.File;
 import java.util.Scanner;
 
@@ -7,13 +7,12 @@ public class UI {
     Storage storage;
 
     public UI() {
-       startPanel();
+
     }
 
     public void startPanel(){
         System.out.println("Storage panel");
-        for (int i = 0; i < 22*4; i++) { System.out.print("-"); }
-        System.out.println();
+        drawLine();
         System.out.println("Please add csv file > format: 'filename.csv' ");
         String input = "null";
         input = scanner.nextLine();
@@ -30,8 +29,8 @@ public class UI {
     private void menuOne(){ // first menu logic
         String input = "null";
         while (true){ // do loop until user not enter x
-            for (int i = 0; i < 22*4; i++) { System.out.print("-"); }
-            System.out.println();
+            drawLine();
+
             System.out.println("Choose operation:");
             System.out.println("[1] Print CSV file");
             System.out.println("[2] Check by item quantity");
@@ -47,14 +46,12 @@ public class UI {
                 storage.printAllCSV();
             }
             else if (input.equals("2")) {
-                for (int i = 0; i < 22*4; i++) { System.out.print("-"); }
-                System.out.println();
+                drawLine();
                 System.out.println("Please enter quantity");
                 storage.searchAndPrintQuantity(Integer.parseInt(scanner.nextLine()));
             }
             else if (input.equals("3")) {
-                for (int i = 0; i < 22*4; i++) { System.out.print("-"); }
-                System.out.println();
+                drawLine();
                 System.out.println("Please enter year > format: yyyy ");
                 String year=scanner.nextLine();
                 System.out.println("Please enter month > format: MM ");
@@ -63,28 +60,23 @@ public class UI {
                 storage.searchAndPrintDate(year,month,scanner.nextLine());
             }
             else if (input.equals("4")) {
-                for (int i = 0; i < 22*4; i++) { System.out.print("-"); }
-                System.out.println();
+                drawLine();
                 storage.searchExpiredTodayDate();
             }
             else if (input.equals("5")) {
-                for (int i = 0; i < 22*4; i++) { System.out.print("-"); }
-                System.out.println();
+                drawLine();
                 storage.sortByQuantity();
             }
             else if (input.equals("6")) {
-                for (int i = 0; i < 22*4; i++) { System.out.print("-"); }
-                System.out.println();
+                drawLine();
                 storage.sortByExpirationDate();
             }
             else if (input.equals("7")) {
-                for (int i = 0; i < 22*4; i++) { System.out.print("-"); }
-                System.out.println();
+                drawLine();
                 storage.sortByName();
             }
             else if (input.equals("8")) {
-                for (int i = 0; i < 22*4; i++) { System.out.print("-"); }
-                System.out.println();
+                drawLine();
                 System.out.println("Please enter file name > format: filename.csv");
                 storage.updateCSV(scanner.nextLine());
             }
@@ -93,5 +85,8 @@ public class UI {
             }
         }
     } //  choose operation menu and logic
-
+    private void drawLine(){
+        for (int i = 0; i < 22*4; i++) { System.out.print("-"); }
+        System.out.println();
+    }
 }
