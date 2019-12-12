@@ -1,7 +1,10 @@
 package work;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class DbEngage {
     Connection cn;
@@ -42,7 +45,7 @@ public class DbEngage {
             System.out.println("error in printNamesAndSurname");
         }
     }
-    public void printCompanyAndEmployees(){
+    public void printCompanyAndEmployeesWithTwo(){
         try {
             ArrayList<String> list = new ArrayList<>();
             st=cn.createStatement();
@@ -66,6 +69,31 @@ public class DbEngage {
                     System.out.println(rs.getString("PAVARDE"));
                 }
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("error in printCompanyAndEmployees");
+        }
+    }
+    public void printCompanyAndEmployeesWithOne()  {
+        try {
+            String projectName="";
+            st=cn.createStatement();
+            rs=st.executeQuery("SELECT C.PAVADINIMAS,\n" +
+                    "A.PAVARDE \n" +
+                    "FROM VYKDYTOJAI AS A\n" +
+                    "JOIN VYKDYMAS AS B \n" +
+                    "JOIN  PROJEKTAI AS C\n" +
+                    "ON A.NR = B.VYKDYTOJAS \n" +
+                    "AND C.NR =B.PROJEKTAS \n" +
+                    "GROUP BY C.PAVADINIMAS,A.PAVARDE;");
+            while (rs.next()){
+                if (!projectName.equals(rs.getString("PAVADINIMAS"))){
+                    projectName =rs.getString("PAVADINIMAS");
+                    System.out.println(" = "+projectName+" = ");
+                }
+                System.out.println(rs.getString("PAVARDE"));
+            }
+            rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("error in printCompanyAndEmployees");
@@ -118,20 +146,23 @@ public class DbEngage {
             System.out.println("error in updateEmployeeProject");
         }
     }
-    public void print(){
+    public void showAllTables(){
         try {
+            String tableName="";
             st=cn.createStatement();
-            rs=st.executeQuery(
-                    "SELECT KVALIFIKACIJA  FROM VYKDYTOJAI WHERE NR=6;"
-            );
+            rs=st.executeQuery("SELECT *\n" +
+                    "FROM INFORMATION_SCHEMA.COLUMNS \n" +
+                    "WHERE TABLE_SCHEMA ='PUBLIC';");
             while (rs.next()){
-                System.out.println(rs.getString("KVALIFIKACIJA"));
+                if (!tableName.equals(rs.getString("TABLE_NAME"))){
+                   tableName=rs.getString("TABLE_NAME");
+                    System.out.println(" = "+tableName+" = ");
+                }
+                System.out.print(rs.getString("COLUMN_NAME")+" TYPE: ");
+                System.out.println(rs.getString("COLUMN_TYPE"));
             }
-            st.close();
-            rs.close();
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("error in printNamesAndSurname");
         }
     }
 }
