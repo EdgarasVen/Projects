@@ -1,0 +1,27 @@
+2019-12-10 20:57:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VYKDYTOJAI" not found; SQL statement:
+SELECT PAVARDE FROM VYKDYTOJAI; [42102-199]
+2019-12-10 20:58:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VYKDYTOJAI" not found; SQL statement:
+SELECT NR,PAVARDE FROM VYKDYTOJAI; [42102-199]
+2019-12-10 20:59:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VYKDYTOJAI" not found; SQL statement:
+SELECT NR,PAVARDE FROM VYKDYTOJAI; [42102-199]
+2019-12-10 21:00:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VYKDYTOJAI" not found; SQL statement:
+SELECT NR,PAVARDE FROM VYKDYTOJAI; [42102-199]
+2019-12-10 21:01:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VYKDYTOJAI" not found; SQL statement:
+SELECT NR,PAVARDE FROM VYKDYTOJAI; [42102-199]
+2019-12-10 21:02:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VYKDYTOJAI" not found; SQL statement:
+SELECT NR,PAVARDE FROM VYKDYTOJAI [42102-199]
+2019-12-10 21:06:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VYKDYTOJAI" not found; SQL statement:
+SELECT * FROM VYKDYTOJAI [42102-199]
+2019-12-10 21:07:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VYKDYTOJAI" not found; SQL statement:
+SELECT NR,PAVARDE FROM VYKDYTOJAI [42102-199]
+2019-12-10 21:09:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VYKDYTOJAI" not found; SQL statement:
+SELECT NR,PAVARDE FROM VYKDYTOJAI [42102-199]
