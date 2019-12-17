@@ -31,5 +31,12 @@ public class MainClass {
 
         System.out.println("max perimetr= "+max);
 
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Shape trans: list
+             ) {
+            stringBuilder.append(trans.toString()+"\n");
+        }
+        System.out.println("-----");
+        System.out.println(stringBuilder.toString());
     }
 }
