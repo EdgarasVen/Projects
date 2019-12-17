@@ -14,6 +14,7 @@ public class Box<T extends Comparable<T>> {
     public boolean isLocked() {
         return lock;
     }
+
     public Box(T t, T t2) {
         if (t.compareTo(t2)<0){
             this.t = t;
