@@ -7,22 +7,21 @@ public class CurrencyInformer {
 
     // skaciat i parsit
     private CurrencyProvider currencyProvider;
-    // eur
-    private String currency;
 
-    public CurrencyInformer(CurrencyProvider currencyProvider, String currency) {
+
+    public CurrencyInformer(CurrencyProvider currencyProvider) {
         this.currencyProvider = currencyProvider;
-        this.currency = currency;
+
     }
 
-    public String inform(String currency2, String dateFrom, String dateTo) {
-        Collection<CurrencyInfo> currencyInfos = currencyProvider.provide(
+    public String inform(String type,String currency, String dateFrom, String dateTo) {
+        String currencyInfos = currencyProvider.provide(
+                type,
                 currency,
-                currency2,
                 new DateRange(LocalDate.parse(dateFrom), LocalDate.parse(dateTo)
                 )
         );
-        return stringify(currencyInfos);
+        return currencyInfos;
     }
 
     private String stringify(Collection<CurrencyInfo> currencyInfos) {

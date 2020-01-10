@@ -12,7 +12,7 @@ public class InMemoryCurrencyProvider implements CurrencyProvider{
 
 
     @Override
-    public Collection<CurrencyInfo> provide(String cur1, String cur2, DateRange range) {
-        return null;
+    public String provide(String type,String cur, DateRange range) {
+        return new ExternalCurrencyProvider().provide(type,cur,range);
     }
 }
