@@ -1,19 +1,31 @@
 package com.company;
 
-import org.w3c.dom.Document;
+
+import org.w3c.dom.*;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class ExternalCurrencyProvider implements CurrencyProvider {
-
+    static void printElements(NodeList nodes){
+        for (int i = 0; i < nodes.getLength(); i++) {
+            if(nodes.item(i) instanceof Element ) {
+                String value="";
+                System.out.println(((Element) nodes.item(i)).getTagName());
+                if (nodes.item(i).hasChildNodes()) {
+                    printElements(nodes.item(i).getChildNodes());
+                    if(!nodes.item(i).getTextContent().trim().isEmpty()){
+                        Text text = (Text)nodes.item(i).getFirstChild();
+                        value +=" = "+text.getData().trim();
+                        System.out.println(value);
+                    }
+                }
+            }
+        }
+    }
     @Override
     public String provide(String type,String cur, DateRange range) {
         try {
@@ -23,29 +35,33 @@ public class ExternalCurrencyProvider implements CurrencyProvider {
 
             String url = new UrlBuilder().BuildUrl(type,cur,range);
             URL urlObj = new URL(url);
-            HttpURLConnection connection = (HttpURLConnection) urlObj.openConnection();
 
+            HttpURLConnection connection = (HttpURLConnection) urlObj.openConnection();
             connection.setRequestMethod("GET");
             connection.setRequestProperty("user-agent", "text/xml");
 
             int responseCode = connection.getResponseCode();
 
             if (responseCode == HttpURLConnection.HTTP_OK) {
-                BufferedReader inputReader = new BufferedReader(
-                        new InputStreamReader(connection.getInputStream()));
+                InputStream xml=connection.getInputStream();
+                document=builder.parse(xml);
+                Element element = document.getDocumentElement();
+                printElements(element.getChildNodes());
 
-                String inputLine;
-                StringBuilder response = new StringBuilder();
 
+                /*BufferedReader inputReader = new BufferedReader(
+                        new InputStreamReader(connection.getInputStream()));*/
+                /*String inputLine;
+                StringBuffer response = new StringBuffer();
                 while ((inputLine = inputReader.readLine()) != null) {
-                    response.append(inputLine).append("\n");
+                    response.append(inputLine);
                 }
-                System.out.println(inputReader.toString());
                 inputReader.close();
-                return response.toString();
+                return response.toString();*/
             }
-        } catch (IOException | ParserConfigurationException e) {
+        } catch (Exception e) {
             System.out.println("Fetch problem");
+
         }
         // fetch data
         // parse from xml
