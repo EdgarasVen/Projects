@@ -1,11 +1,9 @@
 package com.company;
 
 import java.time.LocalDate;
-import java.util.Collection;
 
 public class CurrencyInformer {
 
-    // skaciat i parsit
     private CurrencyProvider currencyProvider;
 
 
@@ -24,10 +22,8 @@ public class CurrencyInformer {
         return currencyInfos;
     }
 
-    private String stringify(Collection<CurrencyInfo> currencyInfos) {
-        // infos to string
-        return "";
-    }
+
+
 
 }
 

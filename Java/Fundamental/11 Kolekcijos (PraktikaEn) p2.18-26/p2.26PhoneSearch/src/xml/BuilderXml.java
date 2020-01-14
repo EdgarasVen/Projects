@@ -1,9 +1,6 @@
 package xml;
 
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
+import org.w3c.dom.*;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -24,6 +21,7 @@ public class BuilderXml {
 
     public BuilderXml() throws ParserConfigurationException {
     }
+
     public void createRoot(String root){
         try {
             this.root = document.createElement(root);
@@ -57,6 +55,13 @@ public class BuilderXml {
         }
 
     }
+    public void addPersonNumber(String name,int number){
+        NodeList nodeList = document.getElementsByTagName(name);
+        Element telNumber = document.createElement("number");
+        telNumber.appendChild(document.createTextNode(String.valueOf(number)));
+        nodeList.item(0).getParentNode().insertBefore(telNumber,nodeList.item(0));
+    }
+
     public void createXmlFile()  {
         try {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -68,6 +73,20 @@ public class BuilderXml {
         } catch (TransformerException e) {
             e.printStackTrace();
         }
+    }
+    protected Node getNode(String tagName, NodeList nodes, String name) {
+        Node node = null;
+        for ( int x = 0; x < nodes.getLength(); x++ ) {
+            if(nodes.item(x).getTextContent().equals(name)) {
+                 node = nodes.item(x);
+            }
+            assert node != null;
+            if (node.getNodeName().equalsIgnoreCase(tagName)) {
+                return node;
+            }
+        }
+
+        return null;
     }
 }
 

@@ -21,6 +21,8 @@ public class Main {
         BuilderXml builderXml = new BuilderXml();
         builderXml.createRoot("data");
         builderXml.addPersonAkaElement("Edgar",800001,"Vilnius","Liepkalnis");
+        builderXml.addPersonAkaElement("Andrej",800002,"Kaunas","Antakalnis");
+        builderXml.addPersonNumber("name",800003);
         builderXml.createXmlFile();
     }
 }

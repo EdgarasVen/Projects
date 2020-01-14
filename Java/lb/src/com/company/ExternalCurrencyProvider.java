@@ -48,7 +48,7 @@ public class ExternalCurrencyProvider implements CurrencyProvider {
                 Element element = document.getDocumentElement();
                 printElements(element.getChildNodes());
 
-
+                createXml(document);
                 /*BufferedReader inputReader = new BufferedReader(
                         new InputStreamReader(connection.getInputStream()));*/
                 /*String inputLine;
@@ -68,5 +68,8 @@ public class ExternalCurrencyProvider implements CurrencyProvider {
 
 
         return cur;
+    }
+    public void createXml(Document document){
+        FileXmlCreator.createXmlFile(document);
     }
 }

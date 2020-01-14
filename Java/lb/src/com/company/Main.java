@@ -17,6 +17,7 @@ public class Main {
                 "2020-01-01",
                 "2020-01-01"
         );
+
         System.out.println(cTable);
 
 
