@@ -56,7 +56,7 @@ public class Main {
         Employee employee2 = new Employee(); employee2.setSalary(200);
 
         System.out.println(ElementUtils.betterElement(string1, string2, (s1, s2) -> s1.length() > s2.length()));
-        System.out.println(ElementUtils.betterElement(car1, car2, (c1, c2) -> c1.getPrice() > c2.getPrice()));
-        System.out.println(ElementUtils.betterElement(employee1, employee2, (e1, e2) -> e1.getSalary() > e2.getSalary()));
+        System.out.println(ElementUtils.betterElement(car1, car2, (c1, c2) -> c1.getPrice() > c2.getPrice()).getPrice());
+        System.out.println(ElementUtils.betterElement(employee1, employee2, (e1, e2) -> e1.getSalary() > e2.getSalary()).getSalary());
     }
 }
