@@ -9,8 +9,6 @@ public class InMemoryCurrencyProvider implements CurrencyProvider{
     public InMemoryCurrencyProvider(Collection<CurrencyInfo> db) {
         this.db = db;
     }
-
-
     @Override
     public String provide(String type,String cur, DateRange range) {
         return new ExternalCurrencyProvider().provide(type,cur,range);

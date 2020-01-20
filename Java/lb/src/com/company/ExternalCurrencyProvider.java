@@ -26,6 +26,23 @@ public class ExternalCurrencyProvider implements CurrencyProvider {
             }
         }
     }
+    static void printAmount(NodeList nodes){
+        for (int i = 0; i < nodes.getLength(); i++) {
+            if(nodes.item(i) instanceof Element ) {
+                String value="";
+                //System.out.println(((Element) nodes.item(i)).getTagName());
+                if (nodes.item(i).hasChildNodes()) {
+                    printAmount(nodes.item(i).getChildNodes());
+                    if(!nodes.item(i).getTextContent().trim().isEmpty()) {
+                        if (((Element) nodes.item(i)).getTagName().equals("Amt")){
+                        Text text = (Text)nodes.item(i).getFirstChild();
+                        value +=" = "+text.getData().trim();
+                        System.out.println(value);}
+                    }
+                }
+            }
+        }
+    }
     @Override
     public String provide(String type,String cur, DateRange range) {
         try {
@@ -46,9 +63,9 @@ public class ExternalCurrencyProvider implements CurrencyProvider {
                 InputStream xml=connection.getInputStream();
                 document=builder.parse(xml);
                 Element element = document.getDocumentElement();
-                printElements(element.getChildNodes());
+                printAmount(element.getChildNodes());
 
-                createXml(document);
+                //createXml(document);
                 /*BufferedReader inputReader = new BufferedReader(
                         new InputStreamReader(connection.getInputStream()));*/
                 /*String inputLine;
