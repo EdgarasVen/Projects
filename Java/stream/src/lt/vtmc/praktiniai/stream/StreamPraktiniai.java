@@ -1,10 +1,7 @@
 package lt.vtmc.praktiniai.stream;
 
 
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -69,6 +66,8 @@ public class StreamPraktiniai {
 
     public static List<String> getDistinctLetters(List<String> names){
         return names.stream()
+                .map(name->name.toCharArray())
+                .flatMap(chars-> Arrays.stream(chars))
                 .distinct()
                 .collect(Collectors.toList());
     }
@@ -77,7 +76,7 @@ public class StreamPraktiniai {
     public static String separateNamesByComma(List<User> users){
         return users.stream()
                 .map(User::getName)
-                .collect(Collectors.joining(","));
+                .collect(Collectors.joining(", "));
     }
 
     public static double getAverageAge(List<User> users){
