@@ -3,7 +3,7 @@ package lt.vtmc.praktiniai.stream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class User {
+public class User implements Comparable<User>{
 
     private String name;
 
@@ -55,4 +55,8 @@ public class User {
         return users;
     }
 
+    @Override
+    public int compareTo(User o) {
+        return age-o.getAge();
+    }
 }

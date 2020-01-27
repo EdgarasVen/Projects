@@ -4,7 +4,10 @@ package lt.vtmc.praktiniai.stream;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.*;
 
 public class StreamPraktiniai {
 
@@ -46,12 +49,13 @@ public class StreamPraktiniai {
     }
 
     public static Integer sum(List<Integer> integers){
-        return integers.stream().mapToInt(Integer::intValue).sum();
+        return integers.stream()
+                .mapToInt(Integer::intValue).sum();
     }
 
     public static List<Integer> skip(List<Integer> integers, Integer toSkip){
         return integers.stream()
-                .filter(number->number==toSkip)
+                .filter(number-> number>(toSkip))
                 .collect(Collectors.toList());
     }
 
@@ -59,15 +63,15 @@ public class StreamPraktiniai {
         return names.stream()
                 .map(name->{
                     String[] a =name.split(" ");
-                    return a[1];
+                    return a[0];
                 })
                 .collect(Collectors.toList());
     }
 
     public static List<String> getDistinctLetters(List<String> names){
         return names.stream()
-                .map(name->name.toCharArray())
-                .flatMap(chars-> Arrays.stream(chars))
+                .map(name->name.split(""))
+                .flatMap(Arrays::stream)
                 .distinct()
                 .collect(Collectors.toList());
     }
@@ -83,58 +87,77 @@ public class StreamPraktiniai {
         return users.stream()
                 .mapToInt(User::getAge)
                 .average()
-                .getAsDouble();
+                .orElse(0.0);
     }
 
     public static Integer getMaxAge(List<User> users){
         return users.stream()
                 .mapToInt(User::getAge)
                 .max()
-                .getAsInt();
+                .orElse(0);
     }
 
     public static Integer getMinAge(List<User> users) {
-        throw new UnsupportedOperationException("Not implemented");
+        return users.stream()
+                .mapToInt(User::getAge)
+                .min()
+                .orElse(0);
     }
 
     public static boolean anyMatch(List<User> users, int age){
-        throw new UnsupportedOperationException("Not implemented");
+        return users.stream()
+                .anyMatch(user->user.getAge()==age);
     }
 
     public static boolean noneMatch(List<User> users, int age){
-        throw new UnsupportedOperationException("Not implemented");
+        return users.stream()
+                .noneMatch(user -> user.getAge()==age);
     }
 
     public static Optional<User> findAny(List<User> users, String name){
-        throw new UnsupportedOperationException("Not implemented");
+        return users.stream()
+                .filter(user -> user.getName().equals(name))
+                .findAny();
     }
 
     public static List<User> sortByAge(List<User> users){
-        throw new UnsupportedOperationException("Not implemented");
+        return users.stream()
+                .sorted()
+                .collect(Collectors.toList());
     }
 
     public static Stream<Integer> getBoxedStream(IntStream stream){
-        throw new UnsupportedOperationException("Not implemented");
+        return stream.boxed();
     }
 
     public static List<Integer> generateFirst10PrimeNumbers(){
-        throw new UnsupportedOperationException("Not implemented");
+        return Stream.iterate(2,x->x+1)
+                .filter(StreamPraktiniai::isPrime)
+                .limit(10)
+                .collect(Collectors.toList());
     }
 
-    public static boolean isPrime(int number) {
-        return IntStream.rangeClosed(2, number/2).noneMatch(i -> number%i == 0);
+    public static boolean isPrime(int n) {
+        return LongStream.rangeClosed(2, (long) Math.sqrt(n))
+                .allMatch(i -> n % i != 0);
     }
 
     public static List<Integer> generate10RandomNumbers(){
-        throw new UnsupportedOperationException("Not implemented");
+        return Stream.generate(new Random()::nextInt)
+                .limit(10)
+                .collect(Collectors.toList());
     }
 
     public static User findOldest(List<User> users){
-        throw new UnsupportedOperationException("Not implemented");
+        return users.stream()
+                .max(Comparator.comparing(User::getAge))
+                .orElse(null);
     }
 
     public static int sumAge(List<User> users){
-        throw new UnsupportedOperationException("Not implemented");
+        return users.stream()
+                .mapToInt(User::getAge)
+                .sum();
     }
 
     //Pvz.:
@@ -142,23 +165,28 @@ public class StreamPraktiniai {
     //https://www.javacodegeeks.com/2015/11/java-8-streams-api-grouping-partitioning-stream.html
     
     public static Map<Boolean, List<User>> partionUsersByGender(List<User> users){
-        throw new UnsupportedOperationException("Not implemented");
+        return users.stream()
+                .collect(partitioningBy(User::isMale));
     }
 
     public static Map<Integer, List<User>> groupByAge(List<User> users){
-        throw new UnsupportedOperationException("Not implemented");
+        return users.stream()
+                .collect(groupingBy(User::getAge));
     }
 
     public static Map<Boolean, Map<Integer, List<User>>> groupByGenderAndAge(List<User> users){
-        throw new UnsupportedOperationException("Not implemented");
+        return users.stream()
+                .collect(groupingBy(User::isMale,groupingBy(User::getAge)));
     }
 
     public static Map<Boolean, Long> countGender(List<User> users){
-        throw new UnsupportedOperationException("Not implemented");
+        return users.stream()
+                .collect(groupingBy(User::isMale,counting()));
     }
         
     public static IntSummaryStatistics ageSummaryStatistics(List<User> users){
-        throw new UnsupportedOperationException("Not implemented");
+        return users.stream()
+                .collect(Collectors.summarizingInt(User::getAge));
     }
 
 }
