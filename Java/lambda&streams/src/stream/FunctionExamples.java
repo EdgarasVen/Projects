@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class FunctionExamples {
 
     public static void main(String[] args) {
-        List<String> words = Arrays.asList("hello", "hola", "goodbye", "adios");
+        /*List<String> words = Arrays.asList("hello", "hola", "goodbye", "adios");
 
         String word1 =
                 FunctionUtils.firstAllMatch(words.stream(), s -> s.contains("o"), s -> s.length() > 5);
@@ -38,10 +38,11 @@ public class FunctionExamples {
                         s -> s.length() > 8);
         System.out.println("First word with q or 8+ letters is " + word5);
     }
-}
-class FunctionUtils{
+}*/
+        class FunctionUtils {
 
-    static <T,U> void firstAllMatch(U stream, Predicate<T> lam1, Predicate<T> lam2){
+            <T, U> void firstAllMatch(U stream, Predicate<T> lam1, Predicate<T> lam2) {
 
-    }
-}
+            }
+        }
+    }}

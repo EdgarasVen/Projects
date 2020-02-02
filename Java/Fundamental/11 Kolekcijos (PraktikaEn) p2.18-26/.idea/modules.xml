@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/p2.18Moving/p2.18Moving.iml" filepath="$PROJECT_DIR$/p2.18Moving/p2.18Moving.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p2.24MultipleEntryDictionary/p2.24MultipleEntryDictionary.iml" filepath="$PROJECT_DIR$/p2.24MultipleEntryDictionary/p2.24MultipleEntryDictionary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p2.25DuplicateRemover/p2.25DuplicateRemover.iml" filepath="$PROJECT_DIR$/p2.25DuplicateRemover/p2.25DuplicateRemover.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p2.26PhoneSearch/p2.26PhoneSearch.iml" filepath="$PROJECT_DIR$/p2.26PhoneSearch/p2.26PhoneSearch.iml" />
+    </modules>
+  </component>
+</project>
