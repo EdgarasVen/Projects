@@ -1,4 +1,4 @@
-package lambda4;
+package stream;
 
 import java.util.*;
 import java.util.function.Predicate;

@@ -1,4 +1,6 @@
-package lambda5;
+package stream2;
+
+import java.io.IOException;
 
 public interface Printable {
 

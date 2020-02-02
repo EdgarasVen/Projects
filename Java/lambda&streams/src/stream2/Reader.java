@@ -1,4 +1,4 @@
-package lambda5;
+package stream2;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -21,7 +21,4 @@ public class Reader {
         }
     }
 
-    public void createFile(Stream stream) {
-
-    }
 }
