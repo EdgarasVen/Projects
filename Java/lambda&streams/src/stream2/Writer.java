@@ -5,8 +5,9 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Collection;
 
-public class Writer {
-    public static void createFile(Collection<String> someList, String fileName){
+public class Writer implements Writable {
+    @Override
+    public void createFile(Collection<String> someList, String fileName){
         try {
             PrintWriter writer = new PrintWriter(fileName, "UTF-8");
             for (String word: someList) {

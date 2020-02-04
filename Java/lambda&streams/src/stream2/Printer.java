@@ -5,9 +5,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Printer implements Printable{
-    Reader reader;
+    Readable reader;
 
-    public Printer(Reader reader) {
+    public Printer(Readable reader) {
         this.reader=reader;
     }
 
@@ -59,7 +59,7 @@ public class Printer implements Printable{
 
     @Override
     public void makeFileWithWords() {
-        Writer.createFile(
+        new Writer().createFile(
                 startFlow().filter(word->word.contains("wow")||word.contains("cool"))
                 .map(word->word.toUpperCase()+"!")
                 .sorted()

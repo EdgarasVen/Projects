@@ -7,8 +7,9 @@ import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
+        Readable file = new Reader("src/wordlist.txt");
         Printable printer = new Printer(new Reader("src/wordlist.txt"));
-        //printer.printFirstTenLetters();
+        printer.printFirstTenLetters();
         //printer.printFirstEightLettersWithABC();
         //printer.printFirstEightLettersWithMixedCase();
         //printer.printLongestWordWithAE();
