@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="exam-socialnetwork">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../Mokykla JAVA/socialnetwork/exam-socialnetwork.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../Mokykla JAVA/socialnetwork/exam-socialnetwork-tests.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
