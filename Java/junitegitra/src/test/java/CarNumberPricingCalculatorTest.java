@@ -16,10 +16,29 @@ public class CarNumberPricingCalculatorTest {
         assertNotNull("Car Calculator is added",calculator);
     }
 
-    @Test
-    public void isCarNumberLegit()  {
-        assertEquals(""
-        ,CarNumberFormatException.class,calculator.calculatePrice("!@##$"));
+    @Test(expected = CarNumberFormatException.class)
+    public void isCarNumberLegitSpecialChars()  {
+        calculator.calculatePrice("@#$");
+    }
+
+    @Test(expected = CarNumberFormatException.class)
+    public void isCarNumberLegitEmpty()  {
+        calculator.calculatePrice("    ");
+    }
+
+    @Test(expected = CarNumberFormatException.class)
+    public void isCarNumberLegitNull()  {
+        calculator.calculatePrice(null);
+    }
+
+    @Test(expected = CarNumberFormatException.class)
+    public void isCarNumberLegitMoreThanSixChars()  {
+        calculator.calculatePrice("ASDFDGFGKSHSDF");
+    }
+
+    @Test(expected = CarNumberFormatException.class)
+    public void isCarNumberLegitLowerCase()  {
+        calculator.calculatePrice("asd123");
     }
 
     @Test

@@ -1,4 +1,4 @@
-public class CarNumberFormatException extends Exception {
+public class CarNumberFormatException extends RuntimeException {
     private String number;
 
     public CarNumberFormatException( String number) {

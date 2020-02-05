@@ -1,3 +1,5 @@
+import java.util.regex.Pattern;
+
 public class CarNumberPricingCalculator {
 
     /**
@@ -22,10 +24,10 @@ public class CarNumberPricingCalculator {
      * pinigų ir kitoms tikslioms operacijoms tam naudokite BigDecimal tipą!
      */
 
-    public Double calculatePrice(String number) throws CarNumberFormatException {
-        checkNumberLegit(number);
-        if(number.length()<6&&number.length()>0) return 10000.0;
-        if(number.length()==6 && isPlateFirstThreeNotLetters(number)||number.length()==6 && isPlateLastThreeNotNumbers(number)) return 10000.0;
+    public Double calculatePrice(String number)  {
+        if (number==null || number.length()>6 || checkIfSomeLetterInLowerCase(number) || checkIfContainsSpecialCharacters(number)) throw new CarNumberFormatException(number);
+        if (number.length()<6&&number.length()>0) return 10000.0;
+        if (number.length()==6 && isPlateFirstThreeNotLetters(number)||number.length()==6 && isPlateLastThreeNotNumbers(number)) return 10000.0;
         if (isPlateLettersSpecial(number)) if (isPlateNumbersAreSame(number)) return 7000.0;else return 2000.0;
         if (!isPlateLettersAreSame(number)&&isPlateNumbersAreSame(number)) return 1000.0;
         if (isPlateLettersAreSame(number)&&isPlateNumbersAreSame(number)) return 5000.0;
@@ -33,9 +35,16 @@ public class CarNumberPricingCalculator {
         return 0.0;
     }
 
-    private void checkNumberLegit(String number) throws CarNumberFormatException {
-            if(isPlateFirstThreeNotLetters(number)&&isPlateLastThreeNotNumbers(number))
-                throw new CarNumberFormatException(number);
+    private boolean checkIfContainsSpecialCharacters (String number) {
+        return Pattern.compile("[!@#$%^&*()_ +=]").matcher(number).find();
+    }
+
+    private boolean checkIfSomeLetterInLowerCase(String number) {
+        char[] arr =number.toCharArray();
+        for (char s: arr) {
+            if (Character.isLowerCase(s)) return true;
+        }
+        return false;
     }
 
     private boolean isPlateNumbersAreSame(String number){
