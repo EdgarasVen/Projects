@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d1f19db-0835-4ca4-affd-246e17900c2e" name="Default Changelist" comment="" />
+    <list default="true" id="0d1f19db-0835-4ca4-affd-246e17900c2e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/java.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/flight/FlightManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/flight/FlightManager.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,10 +80,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1582640589312" />
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1582643295111">
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1582643572797">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582643295111" />
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582643572797" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1582643010606">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -97,5 +104,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1582643297049" />
+    <state x="209" y="115" key="new project wizard" timestamp="1582643592730">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="115" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1582643592730" />
   </component>
 </project>
