@@ -89,11 +89,11 @@ public class Exercises implements lt.itakademija.exam.Exercises {
     // Second option with object create
 
     /*public IntegerGenerator createIntegerGenerator(int numberStart, int numberFinish) {
-        return new IntGen(numberStart,numberFinish);
+        return new Generator(numberStart,numberFinish);
     }
 
     public IntegerGenerator createFilteredIntegerGenerator(IntegerGenerator integerGenerator, NumberFilter numberFilter) {
-        return new IntGen(integerGenerator,numberFilter);
+        return new Generator(integerGenerator,numberFilter);
     }*/
     }
 }
