@@ -10,7 +10,6 @@ public class Register implements VoteRegistry {
     private Map<String,Candidate> candidates = new HashMap<>();
     private boolean voting =true;
 
-
     public boolean registerVote(Vote vote) {
         checkNullAndEmpty(vote);
         if (!voting) return false;

@@ -13,10 +13,6 @@ public class Candidate {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getVotes() {
         return votes;
     }
@@ -24,4 +20,5 @@ public class Candidate {
     public void addVote(){
         votes++;
     }
+
 }

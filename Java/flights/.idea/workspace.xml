@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d1f19db-0835-4ca4-affd-246e17900c2e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/java.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/flight/FlightManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/flight/FlightManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../voting/src/main/java/lt/vote/Candidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../voting/src/main/java/lt/vote/Candidate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../voting/src/main/java/lt/vote/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/../voting/src/main/java/lt/vote/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../voting/target/classes/lt/vote/Candidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/../voting/target/classes/lt/vote/Candidate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../voting/target/classes/lt/vote/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/../voting/target/classes/lt/vote/Register.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
