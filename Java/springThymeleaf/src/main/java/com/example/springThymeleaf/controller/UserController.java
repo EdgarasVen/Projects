@@ -21,7 +21,6 @@ public class UserController {
         this.userDao = userDao;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/api/users")
     @ApiOperation(value = "Get users", notes = "Returns registered users.")
     public List<User> userGet () {
