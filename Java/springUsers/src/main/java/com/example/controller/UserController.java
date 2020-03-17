@@ -16,12 +16,8 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    private final Repo repository;
-
     @Autowired
-    public UserController(Repo repository) {
-        this.repository=repository;
-    }
+    private Repo repository;
 
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/api/users")
