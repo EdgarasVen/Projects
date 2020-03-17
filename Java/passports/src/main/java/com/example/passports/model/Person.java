@@ -39,13 +39,17 @@ public class Person  {
         this.passport = passport;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", passport=" + passport +
+                ", passport=" + passport.getNo()+
                 '}';
     }
 }

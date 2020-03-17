@@ -29,6 +29,10 @@ public class Passport {
         this.no = no;
     }
 
+    public String getNo() {
+        return no;
+    }
+
     public Person getOwner() {
         return owner;
     }
@@ -42,7 +46,7 @@ public class Passport {
         return "Passport{" +
                 ", series='" + series + '\'' +
                 ", no='" + no + '\'' +
-                ", owner=" + owner +
+                ", owner=" + owner.getFirstName() +
                 '}';
     }
 }
