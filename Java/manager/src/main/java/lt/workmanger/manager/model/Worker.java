@@ -1,6 +1,8 @@
 package lt.workmanger.manager.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,11 +25,13 @@ public class Worker {
     private String responsibility;
     private Long salary;
 
-    @JsonIgnore
+    //@JsonIgnore
+    //@JsonManagedReference
     @OneToMany(mappedBy = "worker" , cascade = CascadeType.ALL)
     private List<Assignment> assignments = new ArrayList<>();
 
-    @JsonIgnore
+    //@JsonIgnore
+    //@JsonManagedReference
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
             name = "workers_on_projects",

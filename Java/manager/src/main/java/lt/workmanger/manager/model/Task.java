@@ -1,6 +1,7 @@
 package lt.workmanger.manager.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,6 +16,7 @@ import java.util.List;
 @Setter
 @Getter
 @NoArgsConstructor
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler","workersTasks"})
 public class Task {
 
     @Id

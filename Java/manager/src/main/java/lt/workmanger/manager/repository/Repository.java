@@ -19,6 +19,8 @@ public interface Repository {
     List<Project> getAllProjects();
     List<Assignment> getAllAssignments();
 
+    List<Worker> getAllWorkersByProjectId(Long id);
+
     Worker getWorker(Long id);
     Project getProject(Long id);
     Task getTask(Long id);

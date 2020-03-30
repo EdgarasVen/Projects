@@ -41,6 +41,11 @@ public class RepositoryController implements Repository{
     }
 
     @Override
+    public List<Worker> getAllWorkersByProjectId(Long id) {
+        return projects.findById(id).orElseThrow(null).getWorkers();
+    }
+
+    @Override
     public Worker getWorker(Long id) {
         return workers.findById(id).orElseThrow(null);
     }

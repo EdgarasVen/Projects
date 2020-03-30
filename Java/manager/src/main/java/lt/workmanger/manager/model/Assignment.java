@@ -1,6 +1,7 @@
 package lt.workmanger.manager.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,10 +20,12 @@ public class Assignment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long no;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "worker_id")
     private Worker worker;
 
+    //@JsonIgnore
     @ManyToOne
     @JoinColumn(name = "task_id")
     private Task task;

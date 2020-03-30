@@ -4,11 +4,9 @@ import lt.workmanger.manager.model.Assignment;
 import lt.workmanger.manager.service.CreateProject;
 import lt.workmanger.manager.service.CreateTask;
 import lt.workmanger.manager.service.CreateWorker;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class PostApi extends ApiController{
 
