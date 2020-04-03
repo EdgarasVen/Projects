@@ -8,7 +8,7 @@ import lt.workmanger.manager.model.Project;
 @Data
 @Setter
 @Getter
-public class ProjectTransferData {
+public class ProjectTransferOb {
 
     private Long id;
     private String name;

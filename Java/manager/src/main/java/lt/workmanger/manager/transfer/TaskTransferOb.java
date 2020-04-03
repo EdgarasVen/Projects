@@ -8,7 +8,7 @@ import lt.workmanger.manager.model.Task;
 @Data
 @Setter
 @Getter
-public class TaskTransferData {
+public class TaskTransferOb {
 
     private Long id;
     private String name;

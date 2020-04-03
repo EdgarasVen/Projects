@@ -1,9 +1,9 @@
 package lt.workmanger.manager.controller;
 
 import lt.workmanger.manager.model.Assignment;
-import lt.workmanger.manager.transfer.ProjectTransferData;
-import lt.workmanger.manager.transfer.TaskTransferData;
-import lt.workmanger.manager.transfer.WorkerTransferData;
+import lt.workmanger.manager.transfer.ProjectTransferOb;
+import lt.workmanger.manager.transfer.TaskTransferOb;
+import lt.workmanger.manager.transfer.WorkerTransferOb;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.*;
 public class PostApi extends ApiController{
 
     @PostMapping("api/workers")
-    public void addWorker(@RequestBody final WorkerTransferData newWorker){
+    public void addWorker(@RequestBody final WorkerTransferOb newWorker){
         repositoryService.addWorker(newWorker.build());
     }
 
     @PostMapping("api/projects")
-    public void addProject(@RequestBody final ProjectTransferData newProject){
+    public void addProject(@RequestBody final ProjectTransferOb newProject){
         repositoryService.addProject(newProject.build());
     }
 
     @PostMapping("api/tasks")
-    public void addTask(@RequestBody final TaskTransferData newTask){
+    public void addTask(@RequestBody final TaskTransferOb newTask){
         repositoryService.addTask(newTask.build());
     }
 
