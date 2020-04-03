@@ -1,4 +1,4 @@
-package lt.workmanger.manager.repository;
+package lt.workmanger.manager.service;
 
 import lt.workmanger.manager.model.Project;
 import lt.workmanger.manager.model.Task;
@@ -7,7 +7,7 @@ import lt.workmanger.manager.model.Assignment;
 
 import java.util.List;
 
-public interface Repository {
+public interface RepositoryService {
 
     void addWorker(Worker worker);
     void addTask(Task task);

@@ -4,7 +4,7 @@ import lt.workmanger.manager.model.Project;
 import lt.workmanger.manager.model.Task;
 import lt.workmanger.manager.model.Worker;
 import lt.workmanger.manager.model.Assignment;
-import lt.workmanger.manager.repository.Repository;
+import lt.workmanger.manager.service.RepositoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class ManagerApplication  implements CommandLineRunner
 {
 	@Autowired
-	private  Repository repository;
+	private RepositoryService repositoryService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ManagerApplication.class, args);
@@ -55,29 +55,29 @@ public class ManagerApplication  implements CommandLineRunner
 		Assignment a5 = new Assignment(w3,t9);
 		Assignment a6 = new Assignment(w4,t5);
 
-		repository.addProject(p1);
-		repository.addProject(p2);
+		repositoryService.addProject(p1);
+		repositoryService.addProject(p2);
 
-		repository.addWorker(w1);
-		repository.addWorker(w2);
-		repository.addWorker(w3);
-		repository.addWorker(w4);
+		repositoryService.addWorker(w1);
+		repositoryService.addWorker(w2);
+		repositoryService.addWorker(w3);
+		repositoryService.addWorker(w4);
 
-		repository.addTask(t1);
-		repository.addTask(t2);
-		repository.addTask(t3);
-		repository.addTask(t4);
-		repository.addTask(t5);
-		repository.addTask(t6);
-		repository.addTask(t7);
-		repository.addTask(t8);
-		repository.addTask(t9);
+		repositoryService.addTask(t1);
+		repositoryService.addTask(t2);
+		repositoryService.addTask(t3);
+		repositoryService.addTask(t4);
+		repositoryService.addTask(t5);
+		repositoryService.addTask(t6);
+		repositoryService.addTask(t7);
+		repositoryService.addTask(t8);
+		repositoryService.addTask(t9);
 
-		repository.addAssignment(a1);
-		repository.addAssignment(a2);
-		repository.addAssignment(a3);
-		repository.addAssignment(a4);
-		repository.addAssignment(a5);
-		repository.addAssignment(a6);
+		repositoryService.addAssignment(a1);
+		repositoryService.addAssignment(a2);
+		repositoryService.addAssignment(a3);
+		repositoryService.addAssignment(a4);
+		repositoryService.addAssignment(a5);
+		repositoryService.addAssignment(a6);
 	}
 }

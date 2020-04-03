@@ -1,9 +1,9 @@
 package lt.workmanger.manager.controller;
 
 import lt.workmanger.manager.model.Assignment;
-import lt.workmanger.manager.service.CreateProject;
-import lt.workmanger.manager.service.CreateTask;
-import lt.workmanger.manager.service.CreateWorker;
+import lt.workmanger.manager.transfer.ProjectTransferData;
+import lt.workmanger.manager.transfer.TaskTransferData;
+import lt.workmanger.manager.transfer.WorkerTransferData;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -11,26 +11,26 @@ import org.springframework.web.bind.annotation.*;
 public class PostApi extends ApiController{
 
     @PostMapping("api/workers")
-    public void addWorker(@RequestBody final CreateWorker newWorker){
-        repository.addWorker(newWorker.build());
+    public void addWorker(@RequestBody final WorkerTransferData newWorker){
+        repositoryService.addWorker(newWorker.build());
     }
 
     @PostMapping("api/projects")
-    public void addProject(@RequestBody final CreateProject newProject){
-        repository.addProject(newProject.build());
+    public void addProject(@RequestBody final ProjectTransferData newProject){
+        repositoryService.addProject(newProject.build());
     }
 
     @PostMapping("api/tasks")
-    public void addTask(@RequestBody final CreateTask newTask){
-        repository.addTask(newTask.build());
+    public void addTask(@RequestBody final TaskTransferData newTask){
+        repositoryService.addTask(newTask.build());
     }
 
     @PostMapping("api/assignment/{workerId}/{taskId}")
     public void addAssignmentToWorker(@PathVariable Long workerId,
                                       @PathVariable Long taskId) {
-        repository.addAssignment(new Assignment(
-                repository.getWorker(workerId),
-                repository.getTask(taskId)
+        repositoryService.addAssignment(new Assignment(
+                repositoryService.getWorker(workerId),
+                repositoryService.getTask(taskId)
         ));
     }
 }

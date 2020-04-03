@@ -18,46 +18,46 @@ public class GetApi extends ApiController{
 
     @GetMapping("api/workers")
     public List<Worker> getAllWorkers(){
-        return repository.getAllWorkers();
+        return repositoryService.getAllWorkers();
     }
 
     @GetMapping("api/projects")
     public List<Project> getAllProjects(){
-        return repository.getAllProjects();
+        return repositoryService.getAllProjects();
     }
 
     @GetMapping("api/tasks")
     public List<Task> getAllTasks(){
-        return repository.getAllTasks();
+        return repositoryService.getAllTasks();
     }
 
     @GetMapping("api/assignments")
     public List<Assignment> getAllWorkersTasks(){
-        return repository.getAllAssignments();
+        return repositoryService.getAllAssignments();
     }
 
     @GetMapping("api/workers/{id}")
     public Worker getWorkerById(@PathVariable Long id){
-        return repository.getWorker(id);
+        return repositoryService.getWorker(id);
     }
 
     @GetMapping("api/projects/{id}")
     public Project getProjectById(@PathVariable Long id){
-        return repository.getProject(id);
+        return repositoryService.getProject(id);
     }
 
     @GetMapping("api/assignments/{no}")
     public Assignment getAssignmentById(@PathVariable Long no){
-        return repository.getAssignment(no);
+        return repositoryService.getAssignment(no);
     }
 
     @GetMapping("api/tasks/{id}")
     public Task getTaskById(@PathVariable Long id){
-        return repository.getTask(id);
+        return repositoryService.getTask(id);
     }
 
     @GetMapping("api/projects/{id}/workers/")
     public List<Worker> getAllWorkersByProjectId (@PathVariable Long id){
-        return repository.getAllWorkersByProjectId(id);
+        return repositoryService.getAllWorkersByProjectId(id);
     }
 }

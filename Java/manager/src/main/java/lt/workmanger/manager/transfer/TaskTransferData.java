@@ -1,4 +1,4 @@
-package lt.workmanger.manager.service;
+package lt.workmanger.manager.transfer;
 
 import lombok.Data;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import lt.workmanger.manager.model.Task;
 @Data
 @Setter
 @Getter
-public class CreateTask {
+public class TaskTransferData {
 
     private Long id;
     private String name;

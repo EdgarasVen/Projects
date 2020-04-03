@@ -1,4 +1,4 @@
-package lt.workmanger.manager.repository;
+package lt.workmanger.manager.service;
 
 import lt.workmanger.manager.dao.*;
 import lt.workmanger.manager.model.*;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class RepositoryController implements Repository{
+public class RepositoryServiceImp implements RepositoryService {
 
     @Autowired
     DaoWorker workers;
