@@ -4,6 +4,7 @@ import lt.workmanger.manager.model.Project;
 import lt.workmanger.manager.model.Task;
 import lt.workmanger.manager.model.Worker;
 import lt.workmanger.manager.model.Assignment;
+import lt.workmanger.manager.security.AuthenticationBean;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,11 @@ import java.util.List;
 @RestController
 public class GetApi extends ApiController{
 
+    @GetMapping(path = "/basicauth")
+    public AuthenticationBean authenticate() {
+        //throw new RuntimeException("Some Error has Happened! Contact Support at ***-***");
+        return new AuthenticationBean("You are authenticated");
+    }
 
     @GetMapping("api/workers")
     public List<Worker> getAllWorkers(){
