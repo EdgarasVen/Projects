@@ -6,7 +6,6 @@ public class MyMetricCube implements MetricCube {
     ImperialCube cube;
 
     public MyMetricCube(ImperialCube cube) {
-
         this.cube = cube;
     }
 
