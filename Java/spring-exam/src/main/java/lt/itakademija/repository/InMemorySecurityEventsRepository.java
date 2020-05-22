@@ -27,11 +27,10 @@ public final class InMemorySecurityEventsRepository implements SecurityEventsRep
         this.dateProvider = dateProvider;
     }
 
-    /*
-     *  Notes for implementation:
-     *  
-     *  This method must use SequenceNumberGenerator#getNext() for generating ID;
-     *  This method must use DateProvider#getCurrentDate() for getting dates;
+    /**
+     * Creates new event
+     * @param eventRegistration event data
+     * @return created event
      */
     @Override
     public RegisteredEvent create(EventRegistration eventRegistration) {
@@ -47,11 +46,20 @@ public final class InMemorySecurityEventsRepository implements SecurityEventsRep
 
     }
 
+    /**
+     *
+     * @return list of all events
+     */
     @Override
     public List<RegisteredEvent> getEvents() {
         return registeredEventList;
     }
 
+    /**
+     * Delete event by id
+     * @param id event id
+     * @return deleted event
+     */
     @Override
     public RegisteredEvent delete(Long id) {
         RegisteredEvent event = registeredEventList.stream()
@@ -61,6 +69,12 @@ public final class InMemorySecurityEventsRepository implements SecurityEventsRep
         return event;
     }
 
+    /**
+     * Changes event severity level
+     * @param id event id
+     * @param registeredEventUpdate data to update
+     * @return changed event
+     */
     @Override
     public RegisteredEvent update(Long id, RegisteredEventUpdate registeredEventUpdate) {
         RegisteredEvent oldEvent = registeredEventList.stream()
