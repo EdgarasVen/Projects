@@ -1,17 +1,28 @@
 package lt.weatherapp.weatherapp.model;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.*;
+
+@Data
 @Setter
 @Getter
 @NoArgsConstructor
+@Entity
 public class Weather {
-    //private float lat;
-    //private float lon;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private double lat;
+    private double lon;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "temp_id", referencedColumnName = "id")
     private Temp temp;
-    //private Humidity humidity;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "time_id", referencedColumnName = "id")
     private Observation_time observation_time;
 
 }
