@@ -30,17 +30,6 @@ public class RestApiControllerV1 {
     }
 
     /**
-     * GET method to get realtime weather
-     * @return Weather object
-     */
-    @GetMapping("weather")
-    public ResponseEntity<Map<Object, Object>> getRealtimeWeather(){
-        Map<Object, Object> response = new HashMap<>();
-        response.put("weather",repository.getRealTimeWeather());
-        return ResponseEntity.ok(response);
-    }
-
-    /**
      * GET method to get list of all data.
      * @return List
      */
