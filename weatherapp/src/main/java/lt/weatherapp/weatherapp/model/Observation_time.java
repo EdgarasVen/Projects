@@ -5,10 +5,19 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lt.weatherapp.weatherapp.fetch.UrlBuilder;
 
 import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+/**
+ * Class represents weather date and time.
+ * Connected with class {@link Weather}
+ * @author  Edgaras Venzlauskas
+ * @version 1.0
+ *
+ */
 
 @Data
 @Setter

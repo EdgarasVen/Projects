@@ -8,6 +8,14 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+/**
+ * Class represents weather temperature.
+ * Connected with class {@link Weather}
+ * @author  Edgaras Venzlauskas
+ * @version 1.0
+ *
+ */
+
 @Data
 @Setter
 @Getter

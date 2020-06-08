@@ -8,8 +8,21 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * Class fetching from provided url {@link UrlBuilder} data.
+ * @author  Edgaras Venzlauskas
+ * @version 1.0
+ *
+ */
+
 @Slf4j
-public class WeatherProvider {
+public class WeatherProviderImp {
+
+    /**
+     * @param url string from where to fetch.
+     * @return String of fetched data.
+     *
+     */
 
     public static String provide(String url) throws IOException {
         URL obj = new URL(url);

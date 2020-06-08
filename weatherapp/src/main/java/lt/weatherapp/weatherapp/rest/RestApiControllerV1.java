@@ -18,6 +18,7 @@ import java.util.Map;
  *
  */
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping(value = "/api/v1/")
 public class RestApiControllerV1 {
@@ -28,6 +29,10 @@ public class RestApiControllerV1 {
         this.repository = repository;
     }
 
+    /**
+     * GET method to get realtime weather
+     * @return Weather object
+     */
     @GetMapping("weather")
     public ResponseEntity<Map<Object, Object>> getRealtimeWeather(){
         Map<Object, Object> response = new HashMap<>();
@@ -35,6 +40,10 @@ public class RestApiControllerV1 {
         return ResponseEntity.ok(response);
     }
 
+    /**
+     * GET method to get list of all data.
+     * @return List
+     */
     @GetMapping("history")
     public ResponseEntity<Map<Object, Object>> getAllHistoryWeather(){
         Map<Object, Object> response = new HashMap<>();

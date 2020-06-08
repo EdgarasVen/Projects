@@ -7,12 +7,19 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+/**
+ * Class represents weather entity.
+ * @author  Edgaras Venzlauskas
+ * @version 1.0
+ *
+ */
+
 @Data
 @Setter
 @Getter
 @NoArgsConstructor
 @Entity
-public class Weather {
+public class Weather implements Comparable<Weather>{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,5 +32,13 @@ public class Weather {
     @JoinColumn(name = "time_id", referencedColumnName = "id")
     private Observation_time observation_time;
 
+    /**
+     * Compare weather by data and time.
+     * @return 0 or 1
+     */
+    @Override
+    public int compareTo(Weather o) {
+        return o.getObservation_time().getValue().compareTo(getObservation_time().getValue());
+    }
 }
 
