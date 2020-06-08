@@ -5,6 +5,7 @@ import lt.weatherapp.weatherapp.repo.RepoWeather;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -29,5 +30,14 @@ public class RepositoryImp implements Repository{
     @Override
     public void addWeather(Weather weather) {
         database.save(weather);
+    }
+
+    @Override
+    public void addAllWeather(Collection<Weather> weathers,double lat, double lon) {
+        for (Weather weather:weathers) {
+            weather.setLat(lat);
+            weather.setLon(lon);
+        }
+        database.saveAll(weathers);
     }
 }

@@ -2,8 +2,12 @@ package lt.weatherapp.weatherapp.rest;
 
 import lt.weatherapp.weatherapp.service.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.domain.Page;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *  Class represent api controller for restful application.
@@ -15,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
+@RequestMapping(value = "/api/v1/")
 public class RestApiControllerV1 {
     private final Repository repository;
 
@@ -23,8 +28,17 @@ public class RestApiControllerV1 {
         this.repository = repository;
     }
 
-    @GetMapping("/hello")
-    public String hello(){
-        return "hello";
+    @GetMapping("weather")
+    public ResponseEntity<Map<Object, Object>> getRealtimeWeather(){
+        Map<Object, Object> response = new HashMap<>();
+        response.put("weather",repository.getRealTimeWeather());
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("history")
+    public ResponseEntity<Map<Object, Object>> getAllHistoryWeather(){
+        Map<Object, Object> response = new HashMap<>();
+        response.put("weather",repository.getAllWeather());
+        return ResponseEntity.ok(response);
     }
 }

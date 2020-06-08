@@ -23,7 +23,7 @@ public class UrlBuilder {
                 "?lat="+lat+
                 "&lon="+lon+
                 "&start_time="+startTime+
-                "&end_time=%s"+endTime+
+                "&end_time="+endTime+
                 "&fields%5B%5D="+fields+
                 "&apikey="+apiKey;
     }
