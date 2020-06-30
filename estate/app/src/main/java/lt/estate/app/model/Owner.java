@@ -1,4 +1,4 @@
 package lt.estate.app.model;
 
-public class Client {
+public class Owner {
 }
