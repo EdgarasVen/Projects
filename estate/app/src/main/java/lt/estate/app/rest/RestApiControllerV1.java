@@ -46,7 +46,7 @@ public class RestApiControllerV1 {
     @GetMapping("owners/{id}")
     public ResponseEntity<Map<Object, Object>> getOwnerById(@PathVariable Long id){
         Map<Object, Object> response = new HashMap<>();
-        Owner owner = service.findOwnerById();
+        Owner owner = service.findOwnerById(id);
         if(owner!=null){
             response.put("owner",owner);
             return ResponseEntity.ok(response);
@@ -57,9 +57,9 @@ public class RestApiControllerV1 {
     }
 
     @GetMapping("buildings/{id}")
-    public ResponseEntity<Map<Object, Object>> getBuildingById(){
+    public ResponseEntity<Map<Object, Object>> getBuildingById(@PathVariable Long id){
         Map<Object, Object> response = new HashMap<>();
-        Building building = service.findBuildingById();
+        Building building = service.findBuildingById(id);
         if(building!=null){
             response.put("building",building);
             return ResponseEntity.ok(response);
@@ -71,9 +71,9 @@ public class RestApiControllerV1 {
     @PostMapping("buildings")
     public ResponseEntity<Map<Object, Object>> createBuilding(@RequestBody DtoBuilding dtoBuilding){
         Map<Object, Object> response = new HashMap<>();
-        Building building =dtoBuilding.build();
+        Building building =dtoBuilding.toBuilding();
 
-        service.createBulding(building);
+        service.createBuilding(building);
         response.put("building",building);
         return ResponseEntity.ok(response);
     }
@@ -81,7 +81,7 @@ public class RestApiControllerV1 {
     @PostMapping("owners")
     public ResponseEntity<Map<Object, Object>> createBuilding(@RequestBody final DtoOwner dtoOwner){
         Map<Object, Object> response = new HashMap<>();
-        Owner owner =dtoOwner.build();
+        Owner owner =dtoOwner.toOwner();
 
         service.createOwner(owner);
         response.put("building",owner);
@@ -122,7 +122,7 @@ public class RestApiControllerV1 {
         if(building==null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
-            service.updateBuilding(id,dtoBuilding.build());
+            service.updateBuilding(id,dtoBuilding.toBuilding());
             response.put("building",building);
             return ResponseEntity.ok(response);
         }
@@ -136,7 +136,7 @@ public class RestApiControllerV1 {
         if(owner==null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
-            service.updateOwner(id,dtoOwner.build());
+            service.updateOwner(id,dtoOwner.toOwner());
             response.put("building",owner);
             return ResponseEntity.ok(response);
         }
