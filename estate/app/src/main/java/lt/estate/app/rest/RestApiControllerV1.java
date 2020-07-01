@@ -9,11 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@EnableSwagger2
 @RestController
 @RequestMapping(value = "/api/v1/")
 public class RestApiControllerV1 {
@@ -115,8 +117,9 @@ public class RestApiControllerV1 {
     }
 
     @PutMapping ("buildings/{id}")
-    public ResponseEntity<Map<Object, Object>> updateBuildingById(@PathVariable final Long id,
-    @RequestBody final DtoBuilding dtoBuilding){
+    public ResponseEntity<Map<Object, Object>> updateBuildingById(
+            @PathVariable final Long id,
+            @RequestBody final DtoBuilding dtoBuilding){
         Map<Object, Object> response = new HashMap<>();
         Building building = service.findBuildingById(id);
         if(building==null){
@@ -129,8 +132,9 @@ public class RestApiControllerV1 {
     }
 
     @PutMapping ("owners/{id}")
-    public ResponseEntity<Map<Object, Object>> updateOwnerById(@PathVariable final Long id,
-                                                                  @RequestBody final DtoOwner dtoOwner){
+    public ResponseEntity<Map<Object, Object>> updateOwnerById(
+            @PathVariable final Long id,
+            @RequestBody final DtoOwner dtoOwner){
         Map<Object, Object> response = new HashMap<>();
         Owner owner = service.findOwnerById(id);
         if(owner==null){

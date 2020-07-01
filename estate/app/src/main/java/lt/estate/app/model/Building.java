@@ -5,8 +5,7 @@ import lombok.*;
 import lt.estate.app.enums.PropertyType;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
@@ -19,10 +18,10 @@ public class Building extends BaseEntity{
     @Column(name = "name")
     private String address;
 
-    @Column(name = "name")
+    @Column(name = "size")
     private double size;
 
-    @Column(name = "name")
+    @Column(name = "value")
     private Long value;
 
     @Enumerated(EnumType.STRING)

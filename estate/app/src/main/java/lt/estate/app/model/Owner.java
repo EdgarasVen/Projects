@@ -29,5 +29,5 @@ public class Owner extends BaseEntity{
     @OneToMany(mappedBy = "owner",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
-    private List<Building> buildings = new ArrayList<>();
+    List<Building> buildings;
 }
