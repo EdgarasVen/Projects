@@ -30,4 +30,9 @@ public class Owner extends BaseEntity{
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
     List<Building> buildings;
+
+    public void addBuilding(Building building){
+        building.setOwner(this);
+        buildings.add(building);
+    }
 }

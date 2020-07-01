@@ -9,7 +9,7 @@ public interface EstateService {
 
     List<Owner> getAllOwners();
 
-    List<Owner> getAllBuildings();
+    List<Building> getAllBuildings();
 
     void createBuilding(Building building);
 
@@ -23,7 +23,7 @@ public interface EstateService {
 
     void deleteOwnerById(Long id);
 
-    void updateBuilding(Long id, Building build);
+    void updateBuilding(Long id, Building newBuilding);
 
-    void updateOwner(Long id, Owner build);
+    void updateOwner(Long id, Owner newOwner);
 }

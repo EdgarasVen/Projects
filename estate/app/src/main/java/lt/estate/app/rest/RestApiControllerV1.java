@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,7 +40,7 @@ public class RestApiControllerV1 {
     @GetMapping("buildings")
     public ResponseEntity<Map<Object, Object>> getAllBuildings(){
         Map<Object, Object> response = new HashMap<>();
-        List<Owner> buildings = service.getAllBuildings();
+        List<Building> buildings = service.getAllBuildings();
         response.put("buildings",buildings);
         response.put("size",buildings.size());
         return ResponseEntity.ok(response);
@@ -74,17 +75,15 @@ public class RestApiControllerV1 {
     public ResponseEntity<Map<Object, Object>> createBuilding(@RequestBody DtoBuilding dtoBuilding){
         Map<Object, Object> response = new HashMap<>();
         Building building =dtoBuilding.toBuilding();
-
         service.createBuilding(building);
         response.put("building",building);
         return ResponseEntity.ok(response);
     }
 
     @PostMapping("owners")
-    public ResponseEntity<Map<Object, Object>> createBuilding(@RequestBody final DtoOwner dtoOwner){
+    public ResponseEntity<Map<Object, Object>> createOwner(@RequestBody final DtoOwner dtoOwner){
         Map<Object, Object> response = new HashMap<>();
         Owner owner =dtoOwner.toOwner();
-
         service.createOwner(owner);
         response.put("building",owner);
         return ResponseEntity.ok(response);
@@ -141,7 +140,7 @@ public class RestApiControllerV1 {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             service.updateOwner(id,dtoOwner.toOwner());
-            response.put("building",owner);
+            response.put("owner",owner);
             return ResponseEntity.ok(response);
         }
     }
