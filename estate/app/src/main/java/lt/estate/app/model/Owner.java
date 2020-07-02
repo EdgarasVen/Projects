@@ -24,13 +24,30 @@ public class Owner extends BaseEntity{
     @Column(name = "telephone")
     private String telephone;
 
+    @Column(name = "property_tax")
+    private double tax;
+
     @OneToMany(mappedBy = "owner",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY)
+            cascade = CascadeType.MERGE,
+            fetch = FetchType.EAGER)
     List<Building> buildings;
 
     public void addBuilding(Building building){
         building.setOwner(this);
         buildings.add(building);
+    }
+
+    public void calculateTax(){
+        double tax=0;
+        if(buildings!=null ){
+            for (Building b:buildings
+            ) {
+                double percent=b.getType().taxRate;
+                double result=b.getValue()*percent/100;
+                tax+=result;
+            }
+            this.tax=tax;
+        }
+
     }
 }

@@ -1,7 +1,10 @@
 package lt.estate.app.service;
 
+import lt.estate.app.dto.DtoBuilding;
 import lt.estate.app.model.Building;
 import lt.estate.app.model.Owner;
+
+import java.time.LocalDate;
 import java.util.List;
 
 public interface EstateService {
@@ -25,4 +28,6 @@ public interface EstateService {
     void updateBuilding(Long id, Building newBuilding);
 
     void updateOwner(Long id, Owner newOwner);
+
+    void createBuildingAndAddToOwnerById(Long id, DtoBuilding dtoBuilding);
 }

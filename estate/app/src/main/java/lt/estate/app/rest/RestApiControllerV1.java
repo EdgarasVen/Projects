@@ -83,7 +83,7 @@ public class RestApiControllerV1 {
         Map<Object, Object> response = new HashMap<>();
         Owner owner =dtoOwner.toOwner();
         service.createOwner(owner);
-        response.put("building",owner);
+        response.put("owner",owner);
         return ResponseEntity.ok(response);
     }
 
@@ -106,7 +106,7 @@ public class RestApiControllerV1 {
         Owner owner = service.findOwnerById(id);
         if(owner!=null){
             service.deleteOwnerById(id);
-            response.put("building",owner);
+            response.put("owner",owner);
             return ResponseEntity.ok(response);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -142,4 +142,14 @@ public class RestApiControllerV1 {
             return ResponseEntity.ok(response);
         }
     }
+
+    @PutMapping ("buildings/owner/{id}")
+    public ResponseEntity<Map<Object, Object>> createBuildingAndAddToOwnerById(
+            @PathVariable final Long id,
+            @RequestBody final DtoBuilding dtoBuilding){
+        Map<Object, Object> response = new HashMap<>();
+        service.createBuildingAndAddToOwnerById(id,dtoBuilding);
+        return ResponseEntity.ok(response);
+    }
+
 }

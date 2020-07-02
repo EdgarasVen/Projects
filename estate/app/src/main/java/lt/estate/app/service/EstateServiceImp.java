@@ -1,6 +1,7 @@
 package lt.estate.app.service;
 
 import lombok.extern.slf4j.Slf4j;
+import lt.estate.app.dto.DtoBuilding;
 import lt.estate.app.model.Building;
 import lt.estate.app.model.Owner;
 import lt.estate.app.repo.RepoBuilding;
@@ -84,7 +85,9 @@ public class EstateServiceImp implements EstateService{
     @Override
     public void deleteOwnerById(Long id) {
         List<Building> list=repoBuilding.findAll();
-        List<Building> filteredList=list.stream().filter(building -> building.getOwner().getId()==id)
+        List<Building> filteredList=list.stream()
+                .filter(building -> building.getOwner()!=null)
+                .filter(building -> building.getOwner().getId().equals(id))
                 .collect(Collectors.toList());
         for (Building b :filteredList
                 ) {
@@ -127,9 +130,27 @@ public class EstateServiceImp implements EstateService{
             owner.setSurname(newOwner.getSurname());
             owner.setTelephone(newOwner.getTelephone());
             owner.setBuildings(newOwner.getBuildings());
+            if(newOwner.getBuildings()!=null) owner.calculateTax();
+            repoOwner.save(owner);
             log.info("IN updateOwner - owner updated");
         } else {
             log.info("IN updateOwner - owner not found");
+        }
+    }
+
+    @Override
+    public void createBuildingAndAddToOwnerById(Long id, DtoBuilding dtoBuilding) {
+        List<Owner> list =repoOwner.findAll();
+        Owner owner= list.stream().filter(i -> i.getId()==id )
+                .findFirst().orElse(null);
+        if(owner!=null){
+            owner.setUpdated(new Date());
+            owner.addBuilding(dtoBuilding.toBuilding());
+            owner.calculateTax();
+            repoOwner.save(owner);
+            log.info("IN addBuildingToOwnerById - building added");
+        } else {
+            log.info("IN addBuildingToOwnerById - owner not found");
         }
     }
 }
