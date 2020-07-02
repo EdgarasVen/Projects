@@ -10,7 +10,6 @@ import java.util.Date;
 @Data
 public class DtoBuilding {
     private String address;
-    private Owner owner;
     private double size;
     private Long value;
     private PropertyType type;
@@ -23,7 +22,7 @@ public class DtoBuilding {
         building.setType(type);
         building.setValue(value);
         building.setSize(size);
-        building.setOwner(owner);
+        building.setOwner(null);
         building.setStatus(Status.ACTIVE);
         return building;
     }
