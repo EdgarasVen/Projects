@@ -3,9 +3,7 @@ package lt.estate.app.dto;
 import lombok.Data;
 import lt.estate.app.enums.Status;
 import lt.estate.app.model.Owner;
-
 import java.util.Date;
-
 
 @Data
 public class DtoOwner {

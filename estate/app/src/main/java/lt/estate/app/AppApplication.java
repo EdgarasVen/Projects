@@ -4,6 +4,7 @@ import lt.estate.app.dto.DtoBuilding;
 import lt.estate.app.dto.DtoOwner;
 import lt.estate.app.enums.PropertyType;
 import lt.estate.app.rest.RestApiControllerV1;
+import lt.estate.app.service.EstateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,6 +15,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class AppApplication  implements CommandLineRunner {
 	@Autowired
 	RestApiControllerV1 controllerV1;
+	@Autowired
+	EstateService service;
 
 	public static void main(String[] args) {
 		SpringApplication.run(AppApplication.class, args);
@@ -28,14 +31,56 @@ public class AppApplication  implements CommandLineRunner {
 		dtoOwner.setAddress("Some address 22");
 		dtoOwner.setTelephone("893213244");
 
+		DtoOwner dtoOwner2 =new DtoOwner();
+		dtoOwner2.setName("Mike");
+		dtoOwner2.setSurname("Shepard");
+		dtoOwner2.setAddress("Some address 25");
+		dtoOwner2.setTelephone("894332323");
+
 		DtoBuilding dtoBuilding= new DtoBuilding();
-		dtoBuilding.setAddress("Some address 21");
-		dtoBuilding.setSize(1200);
+		dtoBuilding.setAddress("Address 233");
+		dtoBuilding.setSize(1100);
 		dtoBuilding.setType(PropertyType.HOUSE);
 		dtoBuilding.setValue(3000000L);
 		dtoBuilding.setOwner(null);
-
 		controllerV1.createBuilding(dtoBuilding);
+
+		DtoBuilding dtoBuilding2= new DtoBuilding();
+		dtoBuilding2.setAddress("Address 123");
+		dtoBuilding2.setSize(1200);
+		dtoBuilding2.setType(PropertyType.APARTMENT);
+		dtoBuilding2.setValue(120000L);
+		dtoBuilding2.setOwner(null);
+		controllerV1.createBuilding(dtoBuilding2);
+
+		DtoBuilding dtoBuilding3= new DtoBuilding();
+		dtoBuilding3.setAddress("Address 44");
+		dtoBuilding3.setSize(1300);
+		dtoBuilding3.setType(PropertyType.INDUSTRIAL);
+		dtoBuilding3.setValue(33000000L);
+		dtoBuilding3.setOwner(null);
+		controllerV1.createBuilding(dtoBuilding3);
+
+		DtoBuilding dtoBuilding4= new DtoBuilding();
+		dtoBuilding4.setAddress("Address 1");
+		dtoBuilding4.setSize(1400);
+		dtoBuilding4.setType(PropertyType.HOUSE);
+		dtoBuilding4.setValue(6000000L);
+		dtoBuilding4.setOwner(null);
+		controllerV1.createBuilding(dtoBuilding4);
+
 		controllerV1.createOwner(dtoOwner);
+		controllerV1.createOwner(dtoOwner2);
+
+		dtoBuilding.setOwner(service.findOwnerById(1L));
+		dtoBuilding2.setOwner(service.findOwnerById(1L));
+		dtoBuilding3.setOwner(service.findOwnerById(2L));
+		dtoBuilding4.setOwner(service.findOwnerById(2L));
+
+		controllerV1.updateBuildingById(1L,dtoBuilding);
+		controllerV1.updateBuildingById(2L,dtoBuilding2);
+		controllerV1.updateBuildingById(3L,dtoBuilding3);
+		controllerV1.updateBuildingById(4L,dtoBuilding4);
+
 	}
 }

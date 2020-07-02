@@ -7,10 +7,9 @@ import lt.estate.app.repo.RepoBuilding;
 import lt.estate.app.repo.RepoOwner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -84,6 +83,15 @@ public class EstateServiceImp implements EstateService{
 
     @Override
     public void deleteOwnerById(Long id) {
+        List<Building> list=repoBuilding.findAll();
+        List<Building> filteredList=list.stream().filter(building -> building.getOwner().getId()==id)
+                .collect(Collectors.toList());
+        for (Building b :filteredList
+                ) {
+            b.setOwner(null);
+            repoBuilding.save(b);
+            log.info("IN deleteOwnerById - set null to building owner, building id: {}",b.getId());
+        }
         repoOwner.deleteById(id);
         log.info("IN deleteOwnerById - deleted by id: {}",id);
     }

@@ -3,9 +3,7 @@ package lt.estate.app.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lt.estate.app.enums.PropertyType;
-
 import javax.persistence.*;
-
 
 @EqualsAndHashCode(callSuper = true)
 @Entity

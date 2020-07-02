@@ -4,7 +4,6 @@ import lombok.Data;
 import lt.estate.app.enums.Status;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
-
 import javax.persistence.*;
 import java.util.Date;
 

@@ -2,7 +2,6 @@ package lt.estate.app.service;
 
 import lt.estate.app.model.Building;
 import lt.estate.app.model.Owner;
-
 import java.util.List;
 
 public interface EstateService {
