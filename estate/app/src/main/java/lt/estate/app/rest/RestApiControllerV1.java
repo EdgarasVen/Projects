@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -70,7 +72,7 @@ public class RestApiControllerV1 {
     }
 
     @PostMapping("buildings")
-    public ResponseEntity<Map<Object, Object>> createBuilding(@RequestBody DtoBuilding dtoBuilding){
+    public ResponseEntity<Map<Object, Object>> createBuilding(@RequestBody final @Valid DtoBuilding dtoBuilding){
         Map<Object, Object> response = new HashMap<>();
         Building building =dtoBuilding.toBuilding();
         service.createBuilding(building);
@@ -79,7 +81,7 @@ public class RestApiControllerV1 {
     }
 
     @PostMapping("owners")
-    public ResponseEntity<Map<Object, Object>> createOwner(@RequestBody final DtoOwner dtoOwner){
+    public ResponseEntity<Map<Object, Object>> createOwner(@RequestBody final @Valid DtoOwner dtoOwner){
         Map<Object, Object> response = new HashMap<>();
         Owner owner =dtoOwner.toOwner();
         service.createOwner(owner);
@@ -116,7 +118,7 @@ public class RestApiControllerV1 {
     @PutMapping ("buildings/{id}")
     public ResponseEntity<Map<Object, Object>> updateBuildingById(
             @PathVariable final Long id,
-            @RequestBody final DtoBuilding dtoBuilding){
+            @RequestBody final @Valid DtoBuilding dtoBuilding){
         Map<Object, Object> response = new HashMap<>();
         Building building = service.findBuildingById(id);
         if(building==null){
@@ -131,7 +133,7 @@ public class RestApiControllerV1 {
     @PutMapping ("owners/{id}")
     public ResponseEntity<Map<Object, Object>> updateOwnerById(
             @PathVariable final Long id,
-            @RequestBody final DtoOwner dtoOwner){
+            @RequestBody final @Valid DtoOwner dtoOwner){
         Map<Object, Object> response = new HashMap<>();
         Owner owner = service.findOwnerById(id);
         if(owner==null){
@@ -146,7 +148,7 @@ public class RestApiControllerV1 {
     @PutMapping ("buildings/owner/{id}")
     public ResponseEntity<Map<Object, Object>> createBuildingAndAddToOwnerById(
             @PathVariable final Long id,
-            @RequestBody final DtoBuilding dtoBuilding){
+            @RequestBody final @Valid DtoBuilding dtoBuilding){
         Map<Object, Object> response = new HashMap<>();
         service.createBuildingAndAddToOwnerById(id,dtoBuilding);
         return ResponseEntity.ok(response);

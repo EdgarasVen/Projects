@@ -4,13 +4,19 @@ import lombok.Data;
 import lt.estate.app.enums.PropertyType;
 import lt.estate.app.enums.Status;
 import lt.estate.app.model.Building;
-import lt.estate.app.model.Owner;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Data
 public class DtoBuilding {
+    @NotNull
+    @Length(min=1,max=120)
     private String address;
+    @NotNull
     private double size;
+    @NotNull
     private Long value;
     private PropertyType type;
 
