@@ -11,6 +11,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString
 public class Building extends BaseEntity{
 
     @Column(name = "name")
