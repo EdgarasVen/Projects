@@ -55,11 +55,7 @@ public class EstateServiceImp implements EstateService{
         List<Building> list=repoBuilding.findAll();
         Building building= list.stream().filter(i -> i.getId().equals(id))
                 .findFirst().orElse(null);
-        if(building==null){
-            log.info("IN findBuildingById - no building with such id: {}",id);
-        } else {
-            log.info("IN findBuildingById - find successful");
-        }
+        log.info("IN findBuildingById - find successful");
         return building;
     }
 
@@ -148,4 +144,17 @@ public class EstateServiceImp implements EstateService{
             log.info("IN addBuildingToOwnerById - owner not found");
         }
     }
+
+    @Override
+    public void changeBuildingOwner(Building building, Owner owner) {
+        Owner lastOwner =building.getOwner();
+        building.setOwner(owner);
+        repoBuilding.save(building);
+        lastOwner.deleteBuilding(building);
+        lastOwner.calculateTax();
+        repoOwner.save(lastOwner);
+        owner.calculateTax();
+        repoOwner.save(owner);
+    }
+
 }

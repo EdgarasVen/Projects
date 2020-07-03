@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -154,4 +155,17 @@ public class RestApiControllerV1 {
         return ResponseEntity.ok(response);
     }
 
+    @PutMapping ("buildings/{building}/owner/{owner}")
+    public ResponseEntity<Map<Object, Object>> changeBuildingOwner(
+            @PathVariable("building") final Long buildingId,
+            @PathVariable("owner") final Long ownerId){
+        Building building=service.findBuildingById(buildingId);
+        Owner owner=service.findOwnerById(ownerId);
+        if(building!=null && owner!=null){
+            service.changeBuildingOwner(building,owner);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 }

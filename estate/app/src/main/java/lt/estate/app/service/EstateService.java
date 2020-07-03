@@ -30,4 +30,6 @@ public interface EstateService {
     void updateOwner(Long id, Owner newOwner, Owner owner);
 
     void createBuildingAndAddToOwnerById(Long id, DtoBuilding dtoBuilding);
+
+    void changeBuildingOwner(Building building, Owner owner);
 }
