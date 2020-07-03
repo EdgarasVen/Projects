@@ -71,11 +71,10 @@ public class EstateServiceImp implements EstateService{
             owner.deleteBuilding(building);
             repoBuilding.delete(building);
             repoOwner.save(owner);
-            log.info("IN deleteBuildingById - deleted by id: {}",id);
-        } else {
-            repoBuilding.delete(building);
-            log.info("IN deleteBuildingById - deleted by id: {}",id);
         }
+        repoBuilding.delete(building);
+        log.info("IN deleteBuildingById - deleted by id: {}",id);
+
     }
 
     @Override
@@ -92,7 +91,7 @@ public class EstateServiceImp implements EstateService{
     }
 
     @Override
-    public void deleteOwnerById(Long id) {
+    public void deleteOwnerById(Long id , Owner owner) {
         List<Building> list=repoBuilding.findAll();
         List<Building> filteredList=list.stream()
                 .filter(building -> building.getOwner()!=null)
@@ -109,42 +108,30 @@ public class EstateServiceImp implements EstateService{
     }
 
     @Override
-    public void updateBuilding(Long id, Building newBuilding) {
-        List<Building> list=repoBuilding.findAll();
-        Building building= list.stream().filter(i -> i.getId().equals(id))
-                .findFirst().orElse(null);
-        if(building!=null){
-            building.setUpdated(new Date());
-            building.setAddress(newBuilding.getAddress());
-            building.setOwner(newBuilding.getOwner());
-            building.setSize(newBuilding.getSize());
-            building.setValue(newBuilding.getValue());
-            building.setType(newBuilding.getType());
-            repoBuilding.save(building);
-            log.info("IN updateBuilding - building updated");
-        } else {
-            log.info("IN updateBuilding - building not found");
-        }
+    public void updateBuilding(Long id, Building newBuilding ,Building building) {
+        Owner owner=building.getOwner();
+        building.setUpdated(new Date());
+        building.setAddress(newBuilding.getAddress());
+        building.setSize(newBuilding.getSize());
+        building.setValue(newBuilding.getValue());
+        building.setType(newBuilding.getType());
+        repoBuilding.save(building);
+        owner.calculateTax();
+        repoOwner.save(owner);
+        log.info("IN updateBuilding - building updated");
     }
 
     @Override
-    public void updateOwner(Long id, Owner newOwner) {
-        List<Owner> list =repoOwner.findAll();
-        Owner owner= list.stream().filter(i -> i.getId().equals(id))
-                .findFirst().orElse(null);
-        if(owner!=null){
-            owner.setUpdated(new Date());
-            owner.setName(newOwner.getName());
-            owner.setAddress(newOwner.getAddress());
-            owner.setSurname(newOwner.getSurname());
-            owner.setTelephone(newOwner.getTelephone());
-            owner.setBuildings(newOwner.getBuildings());
-            if(newOwner.getBuildings()!=null) owner.calculateTax();
-            repoOwner.save(owner);
-            log.info("IN updateOwner - owner updated");
-        } else {
-            log.info("IN updateOwner - owner not found");
-        }
+    public void updateOwner(Long id, Owner newOwner, Owner owner) {
+        owner.setUpdated(new Date());
+        owner.setName(newOwner.getName());
+        owner.setAddress(newOwner.getAddress());
+        owner.setSurname(newOwner.getSurname());
+        owner.setTelephone(newOwner.getTelephone());
+        owner.setBuildings(newOwner.getBuildings());
+        if(newOwner.getBuildings()!=null) owner.calculateTax();
+        repoOwner.save(owner);
+        log.info("IN updateOwner - owner updated");
     }
 
     @Override

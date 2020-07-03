@@ -23,11 +23,11 @@ public interface EstateService {
 
     Owner findOwnerById(Long id);
 
-    void deleteOwnerById(Long id);
+    void deleteOwnerById(Long id,Owner owner);
 
-    void updateBuilding(Long id, Building newBuilding);
+    void updateBuilding(Long id, Building newBuilding, Building building);
 
-    void updateOwner(Long id, Owner newOwner);
+    void updateOwner(Long id, Owner newOwner, Owner owner);
 
     void createBuildingAndAddToOwnerById(Long id, DtoBuilding dtoBuilding);
 }

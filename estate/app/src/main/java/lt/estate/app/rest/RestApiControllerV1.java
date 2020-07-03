@@ -107,7 +107,7 @@ public class RestApiControllerV1 {
         Map<Object, Object> response = new HashMap<>();
         Owner owner = service.findOwnerById(id);
         if(owner!=null){
-            service.deleteOwnerById(id);
+            service.deleteOwnerById(id,owner);
             response.put("owner",owner);
             return ResponseEntity.ok(response);
         } else {
@@ -124,7 +124,7 @@ public class RestApiControllerV1 {
         if(building==null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
-            service.updateBuilding(id,dtoBuilding.toBuilding());
+            service.updateBuilding(id,dtoBuilding.toBuilding(),building);
             response.put("building",building);
             return ResponseEntity.ok(response);
         }
@@ -139,7 +139,7 @@ public class RestApiControllerV1 {
         if(owner==null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
-            service.updateOwner(id,dtoOwner.toOwner());
+            service.updateOwner(id,dtoOwner.toOwner(),owner);
             response.put("owner",owner);
             return ResponseEntity.ok(response);
         }
