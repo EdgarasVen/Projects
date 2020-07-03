@@ -92,7 +92,7 @@ public class RestApiControllerV1 {
         Map<Object, Object> response = new HashMap<>();
         Building building = service.findBuildingById(id);
         if(building!=null){
-            service.deleteBuildingById(id);
+            service.deleteBuildingById(id,building);
             response.put("building",building);
             return ResponseEntity.ok(response);
         } else {

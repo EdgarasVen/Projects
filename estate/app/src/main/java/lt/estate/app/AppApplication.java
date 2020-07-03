@@ -69,6 +69,5 @@ public class AppApplication  implements CommandLineRunner {
 		controllerV1.createBuildingAndAddToOwnerById(2L,dtoBuilding3);
 		controllerV1.createBuildingAndAddToOwnerById(2L,dtoBuilding4);
 
-
 	}
 }

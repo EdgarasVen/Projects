@@ -53,7 +53,7 @@ public class EstateServiceImp implements EstateService{
     @Override
     public Building findBuildingById(Long id) {
         List<Building> list=repoBuilding.findAll();
-        Building building= list.stream().filter(i -> i.getId()==id )
+        Building building= list.stream().filter(i -> i.getId().equals(id))
                 .findFirst().orElse(null);
         if(building==null){
             log.info("IN findBuildingById - no building with such id: {}",id);
@@ -64,15 +64,24 @@ public class EstateServiceImp implements EstateService{
     }
 
     @Override
-    public void deleteBuildingById(Long id) {
-        repoBuilding.deleteById(id);
-        log.info("IN deleteBuildingById - deleted by id: {}",id);
+    public void deleteBuildingById(Long id,Building building) {
+        Long ownerId=building.getOwner().getId();
+        Owner owner=findOwnerById(ownerId);
+        if(owner!=null){
+            owner.deleteBuilding(building);
+            repoBuilding.delete(building);
+            repoOwner.save(owner);
+            log.info("IN deleteBuildingById - deleted by id: {}",id);
+        } else {
+            repoBuilding.delete(building);
+            log.info("IN deleteBuildingById - deleted by id: {}",id);
+        }
     }
 
     @Override
     public Owner findOwnerById(Long id) {
         List<Owner> list=repoOwner.findAll();
-        Owner owner= list.stream().filter(i -> i.getId()==id )
+        Owner owner= list.stream().filter(i -> i.getId().equals(id))
                 .findFirst().orElse(null);
         if(owner==null){
             log.info("IN findOwnerById - no owner with such id: {}",id);
@@ -102,7 +111,7 @@ public class EstateServiceImp implements EstateService{
     @Override
     public void updateBuilding(Long id, Building newBuilding) {
         List<Building> list=repoBuilding.findAll();
-        Building building= list.stream().filter(i -> i.getId()==id )
+        Building building= list.stream().filter(i -> i.getId().equals(id))
                 .findFirst().orElse(null);
         if(building!=null){
             building.setUpdated(new Date());
@@ -121,7 +130,7 @@ public class EstateServiceImp implements EstateService{
     @Override
     public void updateOwner(Long id, Owner newOwner) {
         List<Owner> list =repoOwner.findAll();
-        Owner owner= list.stream().filter(i -> i.getId()==id )
+        Owner owner= list.stream().filter(i -> i.getId().equals(id))
                 .findFirst().orElse(null);
         if(owner!=null){
             owner.setUpdated(new Date());
@@ -141,12 +150,11 @@ public class EstateServiceImp implements EstateService{
     @Override
     public void createBuildingAndAddToOwnerById(Long id, DtoBuilding dtoBuilding) {
         List<Owner> list =repoOwner.findAll();
-        Owner owner= list.stream().filter(i -> i.getId()==id )
+        Owner owner= list.stream().filter(i -> i.getId().equals(id))
                 .findFirst().orElse(null);
         if(owner!=null){
             owner.setUpdated(new Date());
             owner.addBuilding(dtoBuilding.toBuilding());
-            owner.calculateTax();
             repoOwner.save(owner);
             log.info("IN addBuildingToOwnerById - building added");
         } else {

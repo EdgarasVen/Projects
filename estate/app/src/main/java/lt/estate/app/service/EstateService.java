@@ -19,7 +19,7 @@ public interface EstateService {
 
     Building findBuildingById(Long id);
 
-    void deleteBuildingById(Long id);
+    void deleteBuildingById(Long id,Building building);
 
     Owner findOwnerById(Long id);
 

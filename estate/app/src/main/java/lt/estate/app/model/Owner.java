@@ -35,6 +35,12 @@ public class Owner extends BaseEntity{
     public void addBuilding(Building building){
         building.setOwner(this);
         buildings.add(building);
+        calculateTax();
+    }
+
+    public void deleteBuilding(Building building){
+        buildings.remove(building);
+        calculateTax();
     }
 
     public void calculateTax(){
